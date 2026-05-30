@@ -1,5 +1,9 @@
-import { redirect } from "next/navigation";
+import Header from "./components/Header/Header";
+import HomeHero from "./components/HomeHero/HomeHero";
 
-export default function Page() {
-  redirect("/home");
+export default function Home(){
+    return(<>
+        <Header variant="dark-bg" />
+        <HomeHero />
+    </>)
 }

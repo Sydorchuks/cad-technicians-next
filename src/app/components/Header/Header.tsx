@@ -4,6 +4,8 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import Container from "../ui/Container/Container"
+import Button from "../ui/Button/Button"
+import { cn } from "../../../../cn"
 
 type HeaderProps = {
   variant?: "light-bg" | "dark-bg"
@@ -22,21 +24,37 @@ export default function Header({
 
   const textColor = isDark
     ? "text-white"
-    : "text-[var(--color-primary)]"
+    : "text-primary"
+
+  const navItems = [
+    {
+      route: "/",
+      label: "HOME",
+    },
+    {
+      route: "/about",
+      label: "ABOUT",
+    },
+    {
+      route: "/services",
+      label: "OUR SERVICES",
+    },
+    {
+      route: "/contact",
+      label: "CONTACT US",
+    },
+  ]
 
   return (
     <header
-      className={`absolute left-0 top-0 z-50 w-full border-b border-(--color-border)/20 md:min-h-[108px]
-        ${
-          menuOpen
-            ? "bg-(--color-bg) md:h-[483px] h-[345px]"
-            : ""
-        }
-      `}
+      className={cn(
+        "absolute left-0 top-0 z-50 w-full border-b border-border/20 md:min-h-27",
+        menuOpen && "bg-bg md:h-120.75 h-86.25"
+      )}
     >
       <Container>
         <div className="hidden lg:block">
-          <div className=" w-full pt-[46px] pb-[24px] 2xl:pt-[32px] 2xl:pb-[23px]">
+          <div className=" w-full pt-11.5 pb-6 2xl:pt-8 2xl:pb-5.75">
             <div className="flex items-start justify-between">
               <Image
                 src={logoSrc}
@@ -44,51 +62,30 @@ export default function Header({
                 width={160}
                 height={111}
                 priority
-                className="h-[111px] w-[160px] shrink-0"
+                className="h-27.75 w-40 shrink-0"
               />
 
-              <div className="flex flex-col items-end gap-[27px]">
-                <button
-                  className={`h-[63px] w-[262px] border-[2px] text-[18px] font-bold uppercase
-                    ${
-                      isDark
-                        ? "border-(--color-bg) text-(--color-text-light)"
-                        : "border-[--color-primary] text-[--color-primary:]"
-                    }
-                  `}
+              <div className="flex flex-col items-end gap-6.75">
+                <Button
+                  className={cn(
+                    "h-15.75 w-65.5 text-18",
+                    isDark
+                      ? "border-white text-text-light"
+                      : "border-primary text-primary"
+                  )}
                 >
                   LOGIN / REGISTRATION
-                </button>
-
-                <nav className="flex items-center">
-                  <Link
-                    href="/"
-                    className={`${textColor} mr-[44px] text-[22px] font-semibold uppercase`}
-                  >
-                    HOME
-                  </Link>
-
-                  <Link
-                    href="/about"
-                    className={`${textColor} mr-[26px] text-[22px] font-semibold uppercase`}
-                  >
-                    ABOUT
-                  </Link>
-
-                  <Link
-                    href="/services"
-                    className={`${textColor} mr-[26px] text-[22px] font-semibold uppercase`}
-                  >
-                    OUR SERVICES
-                  </Link>
-
-                  <Link
-                    href="/contact"
-                    className={`${textColor} text-[22px] font-semibold uppercase`}
-                  >
-                    CONTACT US
-                  </Link>
-
+                </Button>
+                <nav className="flex items-center gap-5.5">
+                  {navItems.map((item) => (
+                      <Link
+                        key={item.route}
+                        href={item.route}
+                        className={cn(textColor, "text-22 font-semibold uppercase")}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
                 </nav>
               </div>
             </div>
@@ -104,30 +101,28 @@ export default function Header({
             width={129}
             height={89}
             priority
-            className="mt-[16px] w-[77px] h-[53px] md:w-[129px] md:h-[89px]"
+            className="mt-4 w-19.25 h-13.25 md:w-32.25 md:h-22.25"
           />
 
           <div className="flex items-start">
             {!menuOpen && (
-              <button
-                className={`mt-[24px] w-[158px] h-[36px] text-[11px] md:mt-[30px] md:w-[193px] md:h-[58px] md:text-[14px] border-[2px] font-bold uppercase
-                  ${
-                    isDark
-                      ? "border-(--color-bg) text-(--color-text-light)"
-                      : "border-(--color-primary) text-(--color-primary)"
-                  }
-                `}
-              >
+              <Button
+              className={cn(
+                "mt-6 w-39.5 h-9 text-11 md:mt-7.5 md:w-48.25 md:h-14.5 md:text-14",
+                isDark
+                  ? "border-white text-text-light"
+                  : "border-primary text-primary"
+                )}>
                 LOGIN / REGISTRATION
-              </button>
+              </Button>
             )}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className={
+                cn("ml-4.5",
                 menuOpen
-                  ? "mt-[30px] ml-[18px] md:mt-[40px]"
-                  : "mt-[31px] ml-[18px] md:mt-[46px] md:ml-[42px]"
-              }
+                  ? "mt-7.5 md:mt-10"
+                  : "mt-7.75 md:mt-11.5 md:ml-10.5")}
             >
               {menuOpen ? (
                 <Image
@@ -135,7 +130,7 @@ export default function Header({
                   alt="Close"
                   width={15}
                   height={16}
-                  className="w-[15px] h-[16px]"
+                  className="w-3.75 h-4"
                 />
               ) : (
                 <Image
@@ -143,7 +138,7 @@ export default function Header({
                   alt="Menu"
                   width={37}
                   height={26}
-                  className="w-[31px] h-[23px] md:w-[37px] md:h-[26px]"
+                  className="w-7.75 h-5.75 md:w-9.25 md:h-6.5"
                 />
               )}
             </button>
@@ -151,34 +146,19 @@ export default function Header({
         </div>
 
         {menuOpen && (
-          <nav className="flex flex-col items-center mt-[22px] md:mt-[37px]">
-            <Link
-              href="/"
-              className="text-[18px] font-bold uppercase text-(--color-primary) md:text-[24px]"
-            >
-              HOME
-            </Link>
-
-            <Link
-              href="/about"
-              className="mt-[12px] text-[18px] font-bold uppercase text-(--color-primary) md:mt-[18px] md:text-[24px]"
-            >
-              ABOUT
-            </Link>
-
-            <Link
-              href="/services"
-              className="mt-[12px] text-[18px] font-bold uppercase text-(--color-primary) md:mt-[18px] md:text-[24px]"
-            >
-              OUR SERVICES
-            </Link>
-
-            <Link
-              href="/contact"
-              className="mt-[12px] text-[18px] font-bold uppercase text-(--color-primary) md:mt-[18px] md:text-[24px]"
-            >
-              CONTACT US
-            </Link>
+          <nav className="flex flex-col items-center mt-5.5 md:mt-9.25">
+            {navItems.map((item, index) => (
+              <Link
+                key={item.route}
+                href={item.route}
+                className={cn(
+                  "text-18 font-bold uppercase text-primary md:text-24",
+                  index !== 0 && "mt-3 md:mt-4.5"
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
         )}
         </div>

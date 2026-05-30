@@ -14,7 +14,7 @@
   font-style: normal;
 }
 
-:root {
+@theme {
   --color-primary: #0FAC87;
   --color-primary-dark: #0A8A6B;
   --color-primary-light: #3CC9A4;
@@ -23,14 +23,32 @@
   --color-text-light: #FFFFFF;
 
   --color-bg: #FFFFFF;
-
   --color-border: #EAEAEA;
 
+  --color-border-primary: #0FAC87;
   --color-overlay: rgba(0, 0, 0, 0.5);
-
   --color-highlight: #FCDA47;
+
+  --text-11: 11px;
+  --text-11--line-height: 11px;
+
+  --text-14: 14px;
+  --text-14--line-height: 14px;
+
+  --text-18: 18px;
+  --text-18--line-height: 18px;
+
+  --text-22: 22px;
+  --text-22--line-height: 22px;
+
+  --text-24: 24px;
+  --text-24--line-height: 24px;
+}
+
+:root {
+  --font-primary: "Cera Pro", sans-serif
 }
 
 body {
-  font-family: "Cera Pro", sans-serif;
+  font-family: var(--font-primary)
 }

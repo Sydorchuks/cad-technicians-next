@@ -9,21 +9,9 @@ export default function Container({
 }: Props) {
   return (
     <div
-    className={`
-      w-full
-      max-w-[2500px]
-      mx-auto
-    
-      px-[20px]
-    
-      min-[768px]:px-[68px]
-      min-[1024px]:px-[140px]
-      min-[1280px]:px-[180px]
-      min-[1920px]:px-[160px]
-      min-[2500px]:px-[480px]
-      
-      ${className || ""}
-    `}
+      className={`mx-auto w-full max-w-full px-5 md:max-w-158 lg:max-w-186 xl:max-w-230 2xl:max-w-385
+        ${className || ""}
+      `}
     >
       {children}
     </div>
