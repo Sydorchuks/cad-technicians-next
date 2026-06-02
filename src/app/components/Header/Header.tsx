@@ -6,6 +6,7 @@ import Link from "next/link"
 import Container from "../ui/Container/Container"
 import Button from "../ui/Button/Button"
 import { cn } from "../../../../cn"
+import useScrolled from "@/app/hooks/useScrolled"
 
 type HeaderProps = {
   variant?: "light-bg" | "dark-bg"
@@ -15,7 +16,7 @@ export default function Header({
   variant = "light-bg",
 }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false)
-
+  const scrolled = useScrolled(50);
   const isDark = variant === "dark-bg"
 
   const logoSrc = isDark
@@ -53,14 +54,18 @@ export default function Header({
     }
   }, [menuOpen])
 
+  const headerBackground = (() => {
+    if (!scrolled) {
+      return "bg-transparent";
+    }
+  
+    return isDark
+      ? "bg-primary shadow-sm"
+      : "bg-white shadow-sm";
+  })();
+
   return (
-    <header
-      className={cn(
-        "fixed left-0 top-0 z-50 w-full border-b border-border/20 shadow-sm md:min-h-27",
-        isDark
-          ? "bg-primary"
-          : "bg-white")}
-    >
+    <header className={cn("fixed left-0 top-0 z-50 w-full border-b border-border/20 md:min-h-27", headerBackground)}>
       <Container>
         <div className="hidden lg:block">
           <div className=" w-full pt-11.5 pb-6 2xl:pt-8 2xl:pb-5.75">

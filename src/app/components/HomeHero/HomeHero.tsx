@@ -12,20 +12,20 @@ export default function HomeHero() {
         TECHNICIANS
       </BackgroundHeroTitle>
 
-      <div className="hidden md:block absolute left-15 min-[1920px]:left-30.5 min-[2500px]:left-103.75 opacity-15 top-0 h-full">
-        <DecorLines count={1} position="left" />
+      <div className="hidden md:block absolute left-15 desktop:left-30.5 ultra:left-103.75 opacity-15 top-0 h-full">
+        <DecorLines count={1} position="left" direction="vertical"/>
       </div>
 
-      <div className="hidden md:block absolute left-66.75 min-[1920px]:left-188.75 min-[2500px]:left-263.75 opacity-15 top-0 h-full">
-        <DecorLines count={1} position="left" />
+      <div className="hidden md:block absolute left-66.75 desktop:left-188.75 ultra:left-263.75 opacity-15 top-0 h-full">
+        <DecorLines count={1} position="left" direction="vertical" />
       </div>
 
-      <div className="hidden md:block absolute left-87.5 min-[1920px]:left-243.75 min-[2500px]:left-319.5 opacity-15 top-0 h-97.5 min-[1920px]:h-210">
-        <DecorLines count={1} position="left" />
+      <div className="hidden md:block absolute left-87.5 desktop:left-243.75 ultra:left-319.5 opacity-15 top-0 h-97.5 desktop:h-210">
+        <DecorLines count={1} position="left" direction="vertical" />
       </div>
 
-      <div className="hidden min-[1920px]:block opacity-15 absolute left-0 right-0 bottom-41.5 z-0">
-        <DecorLines count={1} position="bottom" />
+      <div className="hidden desktop:block opacity-15 absolute left-0 right-0 bottom-41.5 z-0">
+        <DecorLines count={1} position="bottom" direction="horizontal" />
       </div>
 
       <Container>
@@ -33,7 +33,7 @@ export default function HomeHero() {
           <div className="w-full max-w-85 md:max-w-69.25 lg:max-w-130 xl:max-w-150 2xl:max-w-171 mx-auto md:mx-0 shrink-0">
 
             <div className="absolute right-0 top-0 h-screen max-sm:hidden opacity-15">
-              <DecorLines count={1} position="right" />
+              <DecorLines count={1} position="right" direction="vertical"/>
             </div>
 
             <p

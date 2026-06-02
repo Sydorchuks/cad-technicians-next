@@ -50,6 +50,9 @@
   --text-background-lg: 340px;
   --text-background-xl: 420px;
   --text-background-xxl: 500px;
+
+  --breakpoint-desktop: 1920px;
+  --breakpoint-ultra: 2500px;
 }
 
 :root {
