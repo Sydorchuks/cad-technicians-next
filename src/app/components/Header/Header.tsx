@@ -54,7 +54,13 @@ export default function Header({
   }, [menuOpen])
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-border/20 md:min-h-27">
+    <header
+      className={cn(
+        "fixed left-0 top-0 z-50 w-full border-b border-border/20 shadow-sm md:min-h-27",
+        isDark
+          ? "bg-primary"
+          : "bg-white")}
+    >
       <Container>
         <div className="hidden lg:block">
           <div className=" w-full pt-11.5 pb-6 2xl:pt-8 2xl:pb-5.75">

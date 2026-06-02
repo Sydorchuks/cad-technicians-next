@@ -10,7 +10,7 @@ type BackgroundTitleProps = {
     className = "",
   }: BackgroundTitleProps) {
     return (
-      <h1
+      <h2
       className={cn(
         "absolute left-0 z-0 whitespace-nowrap font-lora font-bold leading-none uppercase opacity-[0.12] pointer-events-none select-none",
         className
@@ -25,6 +25,6 @@ type BackgroundTitleProps = {
         }}
       >
         {children}
-      </h1>
+      </h2>
     )
   }

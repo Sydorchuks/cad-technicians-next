@@ -1,5 +1,6 @@
 import Container from "../../components/ui/Container/Container";
 import BackgroundHeroTitle from "../ui/BackgroundHeroTitle/BackgroundHeroTitle";
+import DecorLines from "../ui/DecorLines/DecorLines";
 import HighlightText from "../ui/HighlightText/HighlightText";
 
 export default function HomeHero() {
@@ -11,12 +12,33 @@ export default function HomeHero() {
         TECHNICIANS
       </BackgroundHeroTitle>
 
+      <div className="hidden md:block absolute left-15 min-[1920px]:left-30.5 min-[2500px]:left-103.75 opacity-15 top-0 h-full">
+        <DecorLines count={1} position="left" />
+      </div>
+
+      <div className="hidden md:block absolute left-66.75 min-[1920px]:left-188.75 min-[2500px]:left-263.75 opacity-15 top-0 h-full">
+        <DecorLines count={1} position="left" />
+      </div>
+
+      <div className="hidden md:block absolute left-87.5 min-[1920px]:left-243.75 min-[2500px]:left-319.5 opacity-15 top-0 h-97.5 min-[1920px]:h-210">
+        <DecorLines count={1} position="left" />
+      </div>
+
+      <div className="hidden min-[1920px]:block opacity-15 absolute left-0 right-0 bottom-41.5 z-0">
+        <DecorLines count={1} position="bottom" />
+      </div>
+
       <Container>
         <div className="relative z-10 flex justify-between items-center md:items-start gap-0 md:gap-5 lg:gap-0 pt-10 md:pt-37.25 lg:pt-52">
-          <div className="w-full max-w-85 mx-auto md:mx-0 md:w-69.25 md:max-w-none lg:w-130 xl:w-150 2xl:w-171 shrink-0">
+          <div className="w-full max-w-85 md:max-w-69.25 lg:max-w-130 xl:max-w-150 2xl:max-w-171 mx-auto md:mx-0 shrink-0">
+
+            <div className="absolute right-0 top-0 h-screen max-sm:hidden opacity-15">
+              <DecorLines count={1} position="right" />
+            </div>
+
             <p
-              className="font-body text-md-lg lg:text-3xl xl:text-4xl 2xl:text-5xl leading-6 lg:leading-10.5 xl:leading-11.5 2xl:leading-12.75
-                mt-20 md:mt-15.5 lg:mt-25 xl:mt-35 2xl:mt-70 text-left font-normal text-white"
+              className="font-body text-md-lg lg:text-3xl xl:text-4xl 2xl:text-5xl leading-6 lg:leading-10.5 xl:leading-none
+                mt-20 md:mt-15.5 lg:mt-25 xl:mt-35 2xl:mt-70 font-normal text-white"
             >
               With decades of experience <br />working with land surveyors, <br /> we provide precise AutoCAD
               <br />drawings that offer <br />high-quality{" "}<HighlightText>professionalism</HighlightText>
@@ -26,7 +48,7 @@ export default function HomeHero() {
             <button
               className="relative mt-3.25 lg:mt-7.5 xl:mt-8.75 2xl:mt-10
                 text-sm-md lg:text-md xl:text-md 2xl:text-md-lg font-bold leading-6.5 uppercase
-                text-white block text-left after:block after:w-22.5 lg:after:w-25 2xl:after:w-27.5
+                text-white block after:block after:w-22.5 lg:after:w-25 2xl:after:w-27.5
                 after:h-1 after:mt-0 after:bg-bg-highlight after:content-[''] transition-colors duration-300 hover:opacity-70"
             >
               TRY IT NOW
