@@ -27,22 +27,64 @@
 
   --color-border-primary: #0FAC87;
   --color-overlay: rgba(0, 0, 0, 0.5);
-  --color-highlight: #FCDA47;
+  --color-bg-highlight: #008767;
 
+  --text-xxs: 10px;
+  --text-xxs--line-height: 1;
+  
   --text-xs: 11px;
   --text-xs--line-height: 1;
-
+  
   --text-sm: 14px;
   --text-sm--line-height: 1;
 
+  --text-sm-md:16px;
+  --text-sm-md--line-height:1;
+  
   --text-md: 18px;
   --text-md--line-height: 1;
-
+  
   --text-lg: 22px;
   --text-lg--line-height: 1;
 
+  --text-md-lg: 20px;
+  --text-md-lg--line-height: 1;
+  
   --text-xl: 24px;
   --text-xl--line-height: 1;
+  
+  --text-2xl: 32px;
+  --text-2xl--line-height: 1;
+  
+  --text-3xl: 38px;
+  --text-3xl--line-height: 1;
+  
+  --text-4xl: 44px;
+  --text-4xl--line-height: 1;
+  
+  --text-5xl: 50px;
+  --text-5xl--line-height: 1;
+  
+  --text-6xl: 64px;
+  --text-6xl--line-height: 1;
+  
+  --text-7xl: 80px;
+  --text-7xl--line-height: 1;
+  
+  --text-background-sm: 100px;
+  --text-background-sm--line-height: 1;
+  
+  --text-background-md: 160px;
+  --text-background-md--line-height: 1;
+
+  --text-background-lg: 340px;
+  --text-background-lg--line-height: 1;
+
+  --text-background-xl: 420px;
+  --text-background-xl--line-height: 1;
+
+  --text-background-xxl: 500px;
+  --text-background-xxl--line-height: 1;
 }
 
 :root {
