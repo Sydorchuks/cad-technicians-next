@@ -27,7 +27,7 @@ export default function HomeHero() {
               className="relative mt-3.25 lg:mt-7.5 xl:mt-8.75 2xl:mt-10
                 text-sm-md lg:text-md xl:text-md 2xl:text-md-lg font-bold leading-6.5 uppercase
                 text-white block text-left after:block after:w-22.5 lg:after:w-25 2xl:after:w-27.5
-                after:h-1 after:mt-0 after:bg-bg-highlight after:content-['']"
+                after:h-1 after:mt-0 after:bg-bg-highlight after:content-[''] transition-colors duration-300 hover:opacity-70"
             >
               TRY IT NOW
             </button>
