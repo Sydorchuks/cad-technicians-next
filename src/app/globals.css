@@ -21,6 +21,7 @@
 
   --color-text: #1A1A1A;
   --color-text-light: #FFFFFF;
+  --color-text-dark: #1C2C57;
 
   --color-bg: #FFFFFF;
   --color-border: #EAEAEA;
@@ -31,6 +32,7 @@
 
   --text-xxs: 10px;
   --text-xs: 11px;
+  --text-xs-sm: 12px;
   --text-sm: 14px;
   --text-sm-md:16px;
   --text-md: 18px;
@@ -39,20 +41,27 @@
   --text-xl: 24px;
 
   --text-2xl: 32px;
+  --text-2xl-3xl:36px;
   --text-3xl: 38px;
   --text-4xl: 44px;
   --text-5xl: 50px;
+  --text-5xl-6xl: 60px;
   --text-6xl: 64px;
+  --text-6xl-7xl: 72px;
   --text-7xl: 80px;
 
   --text-background-sm: 100px;
+  --text-background-sm-md: 120px;
   --text-background-md: 160px;
+  --text-background-md-lg: 240px;
+  --text-background-lg-lite: 300px;
   --text-background-lg: 340px;
+  --text-background-lg-xl: 400px;
   --text-background-xl: 420px;
   --text-background-xxl: 500px;
 
-  --breakpoint-desktop: 1920px;
-  --breakpoint-ultra: 2500px;
+  --breakpoint-desktop: 120rem;
+  --breakpoint-ultra: 156.25rem;
 }
 
 :root {

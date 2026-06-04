@@ -1,5 +1,6 @@
 import Container from "../../components/ui/Container/Container";
-import BackgroundHeroTitle from "../ui/BackgroundHeroTitle/BackgroundHeroTitle";
+import BackgroundTitle from "../ui/BackgroundTitle/BackgroundTitle";
+
 import DecorLines from "../ui/DecorLines/DecorLines";
 import HighlightText from "../ui/HighlightText/HighlightText";
 
@@ -8,9 +9,9 @@ export default function HomeHero() {
     <section
       className="relative h-90 md:h-122 lg:h-187.5 xl:h-212.5 2xl:h-270 overflow-hidden bg-primary">
 
-      <BackgroundHeroTitle className="top-15 md:top-27.5 lg:top-41.25 text-background-sm md:text-background-md lg:text-background-lg xl:text-background-xl 2xl:text-background-xxl">
+      <BackgroundTitle variant="dark" className="top-15 md:top-27.5 lg:top-41.25 text-background-sm md:text-background-md lg:text-background-lg xl:text-background-xl 2xl:text-background-xxl">
         TECHNICIANS
-      </BackgroundHeroTitle>
+      </BackgroundTitle>
 
       <div className="hidden md:block absolute left-15 desktop:left-30.5 ultra:left-103.75 opacity-15 top-0 h-full">
         <DecorLines count={1} position="left" direction="vertical"/>
