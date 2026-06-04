@@ -14,7 +14,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Lora";
+  src: url("/fonts/Lora-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+}
+
 @theme {
+  --font-lora: "Lora", serif;
+
   --color-primary: #0FAC87;
   --color-primary-dark: #0A8A6B;
   --color-primary-light: #3CC9A4;
@@ -65,7 +74,7 @@
 }
 
 :root {
-  --font-primary: "Cera Pro", sans-serif
+  --font-primary: "Cera Pro", sans-serif;
 }
 
 body {

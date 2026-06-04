@@ -29,7 +29,7 @@ export default function BackgroundTitle({
   return (
     <h2
       className={cn(
-        "absolute z-0 whitespace-nowrap font-heading font-bold uppercase pointer-events-none select-none",
+        "absolute z-0 whitespace-nowrap font-heading font-bold font-lora uppercase pointer-events-none select-none",
         className
       )}
       style={styles}

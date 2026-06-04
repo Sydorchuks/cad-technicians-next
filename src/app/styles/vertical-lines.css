@@ -1,0 +1,39 @@
+.vertical-line-left {
+    left: 60px;
+  }
+  
+  .vertical-line-left-2 {
+    left: 267px;
+  }
+  
+  .vertical-line-right {
+    right: 60px;
+  }
+  
+  @media (min-width: 120rem) {
+    .vertical-line-left {
+      left: 124px;
+    }
+  
+    .vertical-line-left-2 {
+      left: 755px;
+    }
+  
+    .vertical-line-right {
+      right: 211px;
+    }
+  }
+  
+  @media (min-width: 156.25rem) {
+    .vertical-line-left {
+      left: 414px;
+    }
+  
+    .vertical-line-left-2 {
+      left: 1055px;
+    }
+  
+    .vertical-line-right {
+      right: 525px;
+    }
+  }

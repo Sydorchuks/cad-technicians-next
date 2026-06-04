@@ -36,7 +36,7 @@ export default function DecorLines({count, direction, position,}: Props) {
       <div
         className={cn(
           isHorizontal
-            ? "flex flex-col gap-2.5 w-full"
+            ? "flex flex-col gap-2.25 w-full"
             : "flex gap-10 h-full"
         )}
       >
