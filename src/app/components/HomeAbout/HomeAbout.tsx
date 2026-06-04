@@ -6,7 +6,7 @@ import Button from "../ui/Button/Button";
 
 export default function HomeAbout() {
   return (
-    <section className="relative w-full py-0 lg:py-30 xl:py-30 2xl:py-40 overflow-hidden bg-white border-b border-border">
+    <section className="relative w-full py-0 md:py-20 lg:py-30 xl:py-30 2xl:py-40 overflow-hidden bg-white border-b border-border">
 
       <div className="absolute left-0 top-3.75 md:top-8.25 2xl:top-13.75 w-full z-0">
         <div className="2xl:hidden">
@@ -46,10 +46,10 @@ export default function HomeAbout() {
           <BackgroundTitle
             variant="light"
             className="
-              absolute left-24 top-20
-              md:left-62 lg:left-68 xl:left-128 2xl:left-188
-              text-background-sm md:text-background-md lg:text-background-md-lg xl:text-background-lg-lite 2xl:text-background-lg-xl ultra:text-background-xxl
-              xl:top-25 2xl:top-25 ultra:top-10"
+              absolute left-28 top-23
+              md:left-64 lg:left-68 xl:left-128 2xl:left-188
+              text-bg-sm md:text-bg-md lg:text-[240px] xl:text-[300px] 2xl:text-bg-lg ultra:text-bg-xl
+              md:top-0 xl:top-25 2xl:top-25 ultra:top-10"
           >
             ABOUT
           </BackgroundTitle>
@@ -58,18 +58,18 @@ export default function HomeAbout() {
             alt=""
             className="
               hidden md:flex w-65 lg:w-105 xl:w-155 2xl:w-186.5 h-auto shrink-0 object-contain pointer-events-none select-none self-start 2xl:self-auto
-              pt-22.5 lg:pt-17.5 xl:pt-30 2xl:pt-0
+              pt-22.5 md:pt-2 lg:pt-17.5 xl:pt-30 2xl:pt-0
               -ml-15 lg:-ml-10 lg:-translate-x-35 xl:-translate-x-35 2xl:translate-x-0"
           />
           <div
             className="
               relative ml-14.25 md:ml-0 w-68.5 md:w-105 lg:w-130 xl:w-180 2xl:w-197
-              pt-30 md:pt-0 md:-mt-30 lg:-mt-55 xl:-mt-90 2xl:mt-0 xl:translate-x-62.5 2xl:translate-x-0 2xl:-ml-15 -translate-y-25 md:translate-y-0"
+              pt-30 md:pt-0 md:-mt-39 lg:-mt-55 xl:-mt-90 2xl:mt-0 xl:translate-x-62.5 2xl:translate-x-0 2xl:-ml-15 -translate-y-25 md:translate-y-0"
           >
             <h3
               className="
                 font-heading font-normal uppercase text-text-dark whitespace-nowrap
-                text-2xl-3xl md:text-5xl-6xl lg:text-6xl-7xl xl:text-background-sm 2xl:text-background-sm-md 2xl:pt-30 leading-[1.28]"
+                text-[44px] md:text-[80px] lg:text-[72px] xl:text-bg-sm 2xl:text-[120px] 2xl:pt-30 leading-[1.28]"
             >
               ABOUT US
             </h3>
@@ -77,7 +77,7 @@ export default function HomeAbout() {
             <p
               className="
                 mt-3.25 lg:mt-22 font-body font-normal text-text-dark
-                text-sm-md md:text-md-lg lg:text-md xl:text-md 2xl:text-md
+                text-base md:text-lg lg:text-md xl:text-md 2xl:text-md
                 leading-5 md:leading-6.5 xl:max-w-175 2xl:max-w-none"
             >
               Survey Drafters has decades of experience in the land surveying industry, and our ability to work 
@@ -89,7 +89,7 @@ export default function HomeAbout() {
               variant="outline-green"
               className="
                 mt-6 lg:mt-8.75 w-39.5 md:w-48.25 lg:w-55 xl:w-62.5 2xl:w-65.5
-                flex items-center justify-center text-xs-sm md:text-sm lg:text-sm-md xl:text-md"
+                flex items-center justify-center text-xs md:text-sm lg:text-base xl:text-md"
             >
               READ MORE
             </Button>

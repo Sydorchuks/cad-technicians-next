@@ -39,35 +39,29 @@
   --color-overlay: rgba(0, 0, 0, 0.5);
   --color-bg-highlight: #008767;
 
-  --text-xxs: 10px;
-  --text-xs: 11px;
-  --text-xs-sm: 12px;
+  --text-xs: 12px;
   --text-sm: 14px;
-  --text-sm-md:16px;
+  --text-base: 16px;
   --text-md: 18px;
-  --text-lg: 22px;
-  --text-md-lg: 20px;
-  --text-xl: 24px;
+  --text-lg: 20px;
+  --text-xl: 22px;
+  --text-2xl: 24px;
+  --text-3xl: 26px;
 
-  --text-2xl: 32px;
-  --text-2xl-3xl:36px;
-  --text-3xl: 38px;
-  --text-4xl: 44px;
-  --text-5xl: 50px;
-  --text-5xl-6xl: 60px;
-  --text-6xl: 64px;
-  --text-6xl-7xl: 72px;
-  --text-7xl: 80px;
+  --text-4xl: 36px;
+  --text-5xl: 38px;
+  --text-6xl: 50px;
+  --text-7xl: 60px;
+  --text-8xl: 70px;
+  --text-9xl: 120px;
 
-  --text-background-sm: 100px;
-  --text-background-sm-md: 120px;
-  --text-background-md: 160px;
-  --text-background-md-lg: 240px;
-  --text-background-lg-lite: 300px;
-  --text-background-lg: 340px;
-  --text-background-lg-xl: 400px;
-  --text-background-xl: 420px;
-  --text-background-xxl: 500px;
+  --text-bg-sm: 100px;
+  --text-bg-md: 160px;
+  --text-bg-lg: 400px;
+  --text-bg-xl: 500px;
+
+  --text-number-sm: 160px;
+  --text-number-lg: 200px;
 
   --breakpoint-desktop: 120rem;
   --breakpoint-ultra: 156.25rem;
