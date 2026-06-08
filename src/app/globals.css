@@ -41,6 +41,9 @@
   --color-overlay: rgba(0, 0, 0, 0.5);
   --color-bg-highlight: #008767;
 
+  --color-dark-frame-outline:#0E9676 ;
+  --color-dark-frame: #178F73;
+
   --text-xs: 12px;
   --text-sm: 14px;
   --text-base: 16px;
