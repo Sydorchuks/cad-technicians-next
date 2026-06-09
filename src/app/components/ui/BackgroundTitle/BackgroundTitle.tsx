@@ -27,7 +27,7 @@ export default function BackgroundTitle({
         }
 
   return (
-    <h2
+    <div
       className={cn(
         "absolute z-0 whitespace-nowrap font-heading font-bold font-lora uppercase pointer-events-none select-none",
         className
@@ -35,6 +35,6 @@ export default function BackgroundTitle({
       style={styles}
     >
       {children}
-    </h2>
+    </div>
   )
 }
