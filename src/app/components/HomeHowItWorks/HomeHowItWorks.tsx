@@ -62,11 +62,11 @@ export default function HomeHowItWorks() {
         <BackgroundTitle
           variant="light"
           className="
-            left-1/2 top-0 xl:top-0 -translate-x-1/2 xl:-translate-x-150  2xl:translate-x-0 ultra:-translate-x-70 
+            left-1/2 top-0 -translate-x-1/2 xl:-translate-x-150  2xl:translate-x-0 ultra:-translate-x-70 
             text-bg-sm md:text-bg-md lg:text-[250px] xl:text-bg-lg ultra:text-bg-xl lg:leading-[0.85] text-center whitespace-normal
-            2xl:left-0 2xl:top-0 2xl:leading-[0.9] 2xl:whitespace-nowrap opacity-66"
+            2xl:left-0 2xl:leading-[0.9] 2xl:whitespace-nowrap opacity-66"
         >
-          <span className="block xl:inline">HOW IT</span>
+          <span className="block xl:inline">HOW IT </span>
           <span className="block xl:inline">WORKS</span>
         </BackgroundTitle>
 
@@ -74,15 +74,15 @@ export default function HomeHowItWorks() {
           <h2
             className="
               font-lora font-normal uppercase text-text-dark
-              text-[36px] md:text-[60px] leading-17.5 text-center lg:text-8xl lg:leading-34.5 xl:text-8xl 2xl:text-9xl 2xl:leading-34.5"
+              text-[36px] md:text-[60px] leading-17.5 text-center lg:text-8xl lg:leading-34.5 2xl:text-9xl 2xl:leading-34.5"
           >
             HOW IT WORKS
           </h2>
 
           <div
             className="
-              2xl:mt-27.5 xl:mt-45 lg:mt-50 md:mt-40 mt-25 grid grid-cols-1 lg:items-center items-start gap-y-10 md:gap-y-15 
-              translate-x-0 md:-translate-x-10 lg:translate-x-0 lg:grid-cols-2 lg:gap-x-30 2xl:gap-x-45 2xl:gap-y-30"
+              2xl:mt-28 xl:mt-45 lg:mt-50 md:mt-40 mt-25 grid grid-cols-1 lg:items-center items-start gap-y-10 md:gap-y-15 
+              md:-translate-x-10 lg:translate-x-0 lg:grid-cols-2 lg:gap-x-30 2xl:gap-x-45 2xl:gap-y-30"
           >
             {steps.map((step) => (
               <article
@@ -97,7 +97,7 @@ export default function HomeHowItWorks() {
                   {step.id}
                 </span>
 
-                <div className="relative pl-17.5 md:pl-17.5 pt-6 md:pt-2 2xl:pl-18 2xl:pt-3">
+                <div className="relative pl-17.5 pt-6 md:pt-2 2xl:pt-3">
                   <img
                     src={step.icon}
                     alt=""
