@@ -2,6 +2,7 @@ import Container from "../../components/ui/Container/Container";
 import BackgroundTitle from "../ui/BackgroundTitle/BackgroundTitle";
 import DecorLines from "../ui/DecorLines/DecorLines";
 import "../../styles/vertical-lines.css"
+import "../../globals.css"
 import Button from "../ui/Button/Button";
 
 export default function HomeAbout() {
