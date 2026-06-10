@@ -44,16 +44,6 @@ export default function HomeAbout() {
             relative z-20 pt-25 md:pt-0 lg:pt-10 xl:pt-0 2xl:pt-40
             flex flex-col 2xl:flex-row items-start md:items-end 2xl:items-start"
         >
-          <BackgroundTitle
-            variant="light"
-            className="
-              absolute left-28 top-23
-              md:left-64 lg:left-68 xl:left-128 2xl:left-188
-              text-bg-sm md:text-bg-md lg:text-[240px] xl:text-[300px] 2xl:text-bg-lg ultra:text-bg-xl
-              md:top-0 xl:top-25 2xl:top-25 ultra:top-10"
-          >
-            ABOUT
-          </BackgroundTitle>
           <img
             src="/logo-bg.svg"
             alt=""
@@ -64,18 +54,30 @@ export default function HomeAbout() {
           />
           <div
             className="
-              relative ml-14.25 md:ml-0 w-68.5 md:w-105 lg:w-130 xl:w-180 2xl:w-197
-              pt-30 md:pt-0 md:-mt-39 lg:-mt-55 xl:-mt-90 2xl:mt-0 xl:translate-x-62.5 2xl:translate-x-0 2xl:-ml-15 -translate-y-25 md:translate-y-0"
+              relative ml-14.25 md:ml-0 w-68.5 md:w-105 lg:w-130 xl:max-w-200 2xl:w-197
+              pt-30 md:pt-0 md:-mt-39 lg:-mt-55 xl:-mt-90 2xl:mt-0 xl:translate-x-5 2xl:translate-x-0 2xl:-ml-15 -translate-y-25 md:translate-y-0"
           >
-            <h3 className="section-title whitespace-nowrap">
+            <BackgroundTitle
+              variant="light"
+              className="
+                left-[10%] md:left-[16%] lg:left-[11%] top-[18%] md:top-[-7%] lg:top-[-25%] xl:top-[-20%] 2xl:top-[-10%] ultra:top-[-20%]
+                text-bg-sm md:text-bg-md lg:text-[240px] xl:text-[300px] 2xl:text-bg-lg ultra:text-bg-xl"
+            >
+              ABOUT
+            </BackgroundTitle>
+            <h2
+              className="
+                font-lora font-normal uppercase text-text-dark whitespace-nowrap
+                text-[44px] md:text-[60px] lg:text-[72px] xl:text-bg-sm 2xl:text-[120px] md:pt-8 lg:pt-0 2xl:pt-30 leading-[1.28] relative z-10"
+            >
               ABOUT US
-            </h3>
+            </h2>
 
             <p
               className="
                 mt-3.25 lg:mt-22 font-body font-normal text-text-dark
                 text-base md:text-lg lg:text-md xl:text-md 2xl:text-md
-                leading-5 md:leading-6.5 xl:max-w-175 2xl:max-w-none"
+                leading-5 md:leading-6.5 xl:max-w-120 2xl:max-w-none"
             >
               Survey Drafters has decades of experience in the land surveying industry, and our ability to work 
               virtually with professionals across the country is what sets us apart from the rest. We minimize 
