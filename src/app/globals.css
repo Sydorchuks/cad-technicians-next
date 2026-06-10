@@ -80,3 +80,78 @@ body {
   font-family: var(--font-primary);
   line-height: 1; 
 }
+
+.section-title {
+  font-family: "Lora", serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #1C2C57;
+
+  font-size: 36px;
+  line-height: 43px;
+}
+
+@media (min-width: 360px) {
+  .section-title {
+    font-size: 36px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 70px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .section-title {
+    font-size: 120px;
+  }
+}
+
+.light-bg-title {
+  font-family: var(--font-lora);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+
+  font-size: 36px;
+}
+
+@media (min-width: 360px) {
+  .light-bg-title {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 768px) {
+  .light-bg-title {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .light-bg-title {
+    font-size: 64px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .light-bg-title {
+    font-size: 68px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .light-bg-title {
+    font-size: 70px;
+  }
+}

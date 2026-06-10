@@ -2,6 +2,7 @@ import Container from "../../components/ui/Container/Container";
 import BackgroundTitle from "../ui/BackgroundTitle/BackgroundTitle";
 import DecorLines from "../ui/DecorLines/DecorLines";
 import "../../styles/vertical-lines.css"
+import "../../globals.css"
 import Button from "../ui/Button/Button";
 
 export default function HomeAbout() {
@@ -66,11 +67,7 @@ export default function HomeAbout() {
               relative ml-14.25 md:ml-0 w-68.5 md:w-105 lg:w-130 xl:w-180 2xl:w-197
               pt-30 md:pt-0 md:-mt-39 lg:-mt-55 xl:-mt-90 2xl:mt-0 xl:translate-x-62.5 2xl:translate-x-0 2xl:-ml-15 -translate-y-25 md:translate-y-0"
           >
-            <h3
-              className="
-                font-heading font-normal uppercase text-text-dark whitespace-nowrap
-                text-[44px] md:text-[80px] lg:text-[72px] xl:text-bg-sm 2xl:text-[120px] 2xl:pt-30 leading-[1.28]"
-            >
+            <h3 className="section-title whitespace-nowrap">
               ABOUT US
             </h3>
 

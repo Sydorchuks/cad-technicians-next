@@ -2,6 +2,7 @@ import Container from "../../components/ui/Container/Container";
 import BackgroundTitle from "../ui/BackgroundTitle/BackgroundTitle";
 import DecorLines from "../ui/DecorLines/DecorLines";
 import "../../styles/vertical-lines.css";
+import "../../globals.css"
 
 const steps = [
   {
@@ -46,15 +47,15 @@ export default function HomeHowItWorks() {
         <DecorLines count={1} position="center" direction="horizontal" />
       </div>
 
-      <div className="absolute left-0 top-137.5 md:top-150 w-full lg:hidden">
+      <div className="absolute left-0 top-130 md:top-150 w-full lg:hidden">
         <DecorLines count={1} position="center" direction="horizontal" />
       </div>
 
-      <div className="absolute left-0 top-202.5 md:top-208.75 w-full lg:hidden">
+      <div className="absolute left-0 top-195 md:top-214 w-full lg:hidden">
         <DecorLines count={1} position="center" direction="horizontal" />
       </div>
 
-      <div className="absolute left-0 top-270 w-full lg:hidden">
+      <div className="absolute left-0 top-265 md:top-275 w-full lg:hidden">
         <DecorLines count={1} position="center" direction="horizontal" />
       </div>
 
@@ -64,30 +65,26 @@ export default function HomeHowItWorks() {
           className="
             left-1/2 top-0 -translate-x-1/2 xl:-translate-x-150  2xl:translate-x-0 ultra:-translate-x-70 
             text-bg-sm md:text-bg-md lg:text-[250px] xl:text-bg-lg ultra:text-bg-xl lg:leading-[0.85] text-center whitespace-normal
-            2xl:left-0 2xl:leading-[0.9] 2xl:whitespace-nowrap opacity-66"
+            2xl:left-10 2xl:leading-[0.9] 2xl:whitespace-nowrap opacity-66"
         >
           <span className="block xl:inline">HOW IT </span>
           <span className="block xl:inline">WORKS</span>
         </BackgroundTitle>
 
-        <div className="relative z-20 flex flex-col items-center pt-21.25 md:pt-25 lg:pt-40 xl:pt-37.5 2xl:pt-47.5">
-          <h2
-            className="
-              font-lora font-normal uppercase text-text-dark
-              text-[36px] md:text-[60px] leading-17.5 text-center lg:text-8xl lg:leading-34.5 2xl:text-9xl 2xl:leading-34.5"
-          >
+        <div className="relative z-20 flex flex-col items-center pt-21.25 md:pt-25 2xl:pt-47.5">
+
+          <h2 className="section-title text-center">
             HOW IT WORKS
           </h2>
 
           <div
-            className="
-              2xl:mt-28 xl:mt-45 lg:mt-50 md:mt-40 mt-25 grid grid-cols-1 lg:items-center items-start gap-y-10 md:gap-y-15 
-              md:-translate-x-10 lg:translate-x-0 lg:grid-cols-2 lg:gap-x-30 2xl:gap-x-45 2xl:gap-y-30"
+            className="md:mt-50 mt-25 grid grid-cols-1 lg:grid-cols-2
+              gap-y-10 md:gap-y-15 lg:gap-x-30 2xl:gap-x-45 2xl:gap-y-30 w-full max-w-310"
           >
             {steps.map((step) => (
               <article
                 key={step.id}
-                className="relative w-[320px] md:w-142.5 lg:w-86 min-h-45 2xl:w-132.5 2xl:min-h-55"
+                className="relative w-full"
               >
                 <span
                   className="
@@ -101,7 +98,7 @@ export default function HomeHowItWorks() {
                   <img
                     src={step.icon}
                     alt=""
-                    className="object-contain w-16 h-16 md:w-20.75 md:h-20.75 2xl:w-23 2xl:h-23"
+                    className="size-16 md:size-20.75 2xl:size-23"
                   />
 
                   <p className="mt-4.25 md:leading-6.25 text-text-dark text-base md:text-lg">
