@@ -28,6 +28,8 @@
   --color-primary-dark: #0A8A6B;
   --color-primary-light: #3CC9A4;
 
+  --color-light-alt:#F1F1F1;
+
   --color-text: #1A1A1A;
   --color-text-light: #FFFFFF;
   --color-text-dark: #1C2C57;
@@ -38,6 +40,9 @@
   --color-border-primary: #0FAC87;
   --color-overlay: rgba(0, 0, 0, 0.5);
   --color-bg-highlight: #008767;
+
+  --color-dark-frame-outline:#0E9676 ;
+  --color-dark-frame: #178F73;
 
   --text-xs: 12px;
   --text-sm: 14px;
@@ -74,4 +79,79 @@
 body {
   font-family: var(--font-primary);
   line-height: 1; 
+}
+
+.section-title {
+  font-family: "Lora", serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #1C2C57;
+
+  font-size: 36px;
+  line-height: 43px;
+}
+
+@media (min-width: 360px) {
+  .section-title {
+    font-size: 36px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 70px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .section-title {
+    font-size: 120px;
+  }
+}
+
+.light-bg-title {
+  font-family: var(--font-lora);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+
+  font-size: 36px;
+}
+
+@media (min-width: 360px) {
+  .light-bg-title {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 768px) {
+  .light-bg-title {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .light-bg-title {
+    font-size: 64px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .light-bg-title {
+    font-size: 68px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .light-bg-title {
+    font-size: 70px;
+  }
 }
