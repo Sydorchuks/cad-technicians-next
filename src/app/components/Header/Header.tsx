@@ -94,7 +94,7 @@ export default function Header({
                           href={item.route}
                           className={cn(
                             textColor,
-                            "text-lg font-semibold uppercase transition-colors duration-300 hover:opacity-70"
+                            "text-xl font-semibold uppercase transition-colors duration-300 hover:opacity-70"
                           )}
                         >
                           {item.label}
@@ -124,7 +124,7 @@ export default function Header({
               {!menuOpen && (
                 <Button
                   variant={isDark ? "secondary" : "primary"}
-                  className="mt-6 w-39.5 h-9 text-xs md:mt-7.5 md:w-48.25 md:h-14.5 md:text-sm"
+                  className="mt-6 w-39.5 h-9 text-[11px] md:mt-7.5 md:w-48.25 md:h-14.5 md:text-sm"
                 >
                   LOGIN / REGISTRATION
                 </Button>

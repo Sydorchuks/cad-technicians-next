@@ -14,13 +14,23 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Lora";
+  src: url("/fonts/Lora-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+}
+
 @theme {
+  --font-lora: "Lora", serif;
+
   --color-primary: #0FAC87;
   --color-primary-dark: #0A8A6B;
   --color-primary-light: #3CC9A4;
 
   --color-text: #1A1A1A;
   --color-text-light: #FFFFFF;
+  --color-text-dark: #1C2C57;
 
   --color-bg: #FFFFFF;
   --color-border: #EAEAEA;
@@ -29,34 +39,36 @@
   --color-overlay: rgba(0, 0, 0, 0.5);
   --color-bg-highlight: #008767;
 
-  --text-xxs: 10px;
-  --text-xs: 11px;
+  --text-xs: 12px;
   --text-sm: 14px;
-  --text-sm-md:16px;
+  --text-base: 16px;
   --text-md: 18px;
-  --text-lg: 22px;
-  --text-md-lg: 20px;
-  --text-xl: 24px;
+  --text-lg: 20px;
+  --text-xl: 22px;
+  --text-2xl: 24px;
+  --text-3xl: 26px;
 
-  --text-2xl: 32px;
-  --text-3xl: 38px;
-  --text-4xl: 44px;
-  --text-5xl: 50px;
-  --text-6xl: 64px;
-  --text-7xl: 80px;
+  --text-4xl: 36px;
+  --text-5xl: 38px;
+  --text-6xl: 50px;
+  --text-7xl: 60px;
+  --text-8xl: 70px;
+  --text-9xl: 120px;
 
-  --text-background-sm: 100px;
-  --text-background-md: 160px;
-  --text-background-lg: 340px;
-  --text-background-xl: 420px;
-  --text-background-xxl: 500px;
+  --text-bg-sm: 100px;
+  --text-bg-md: 160px;
+  --text-bg-lg: 400px;
+  --text-bg-xl: 500px;
 
-  --breakpoint-desktop: 1920px;
-  --breakpoint-ultra: 2500px;
+  --text-number-sm: 160px;
+  --text-number-lg: 200px;
+
+  --breakpoint-desktop: 120rem;
+  --breakpoint-ultra: 156.25rem;
 }
 
 :root {
-  --font-primary: "Cera Pro", sans-serif
+  --font-primary: "Cera Pro", sans-serif;
 }
 
 body {
