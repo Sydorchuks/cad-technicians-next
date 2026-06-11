@@ -35,6 +35,7 @@
   --color-text-dark: #1C2C57;
 
   --color-bg: #FFFFFF;
+  --color-bg-gray:#E8F4F1;
   --color-border: #EAEAEA;
 
   --color-border-primary: #0FAC87;
@@ -43,6 +44,8 @@
 
   --color-dark-frame-outline:#0E9676 ;
   --color-dark-frame: #178F73;
+  --color-gray-idle: #C4C4C4;
+
 
   --text-xs: 12px;
   --text-sm: 14px;
