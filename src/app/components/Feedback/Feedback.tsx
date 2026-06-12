@@ -60,8 +60,7 @@ export default function Feedback() {
     };
   }, []);
 
-  const arrowButtonClass =
-    "absolute top-1/2 -translate-y-1/2 z-20 w-[21px] h-[42px] md:w-[28px] md:h-[54px] 2xl:w-[37px] 2xl:h-[71px]";
+  const arrowButtonClass = "absolute top-1/2 -translate-y-1/2 z-20 w-[21px] h-[42px] md:w-[28px] md:h-[54px] 2xl:w-[37px] 2xl:h-[71px]  transition-all duration-300 hover:opacity-70 hover:-translate-x-1";
 
   const arrowImageClass = "w-full h-full object-contain";
 
@@ -84,7 +83,7 @@ export default function Feedback() {
           </div>
 
           <div className="relative mt-3 md:mt-12 2xl:mt-35 w-full py-8 md:py-12 2xl:py-14">
-            
+
             <div className="absolute left-1/2 top-0 w-screen -translate-x-1/2">
               <DecorLines count={1} position="top" direction="horizontal"/>
             </div>
