@@ -1,3 +1,4 @@
+import ContactBlock from "./components/ContactBlock/ContactBlock";
 import Feedback from "./components/Feedback/Feedback";
 import Header from "./components/Header/Header";
 import HomeAbout from "./components/HomeAbout/HomeAbout";
@@ -13,5 +14,6 @@ export default function Home(){
         <HomeHowItWorks />
         <Video />
         <Feedback />
+        <ContactBlock />
     </>)
 }
