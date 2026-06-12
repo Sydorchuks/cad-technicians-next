@@ -65,7 +65,7 @@ export default function Feedback() {
   const arrowImageClass = "w-full h-full object-contain";
 
   return (
-    <section className="relative overflow-hidden bg-white py-0 2xl:py-40">
+    <section className="relative overflow-hidden bg-white pt-0 2xl:pt-40">
       <div className="absolute hidden lg:flex top-0 vertical-line-right h-full z-30">
         <DecorLines count={1} position="right" direction="vertical" />
       </div>
