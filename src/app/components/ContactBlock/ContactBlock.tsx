@@ -6,6 +6,20 @@ import Button from "../ui/Button/Button";
 import "../../styles/vertical-lines.css";
 import { useState } from "react";
 import Toast from "../ui/Toast/Toast";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import validator from "validator";
+
+
+const contactSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().refine(validator.isEmail,"Invalid email"),
+  phone: z.string().refine(validator.isMobilePhone, "Invalid phone number"),
+  message: z.string().min(1, "Message is required"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 const inputs = [
   { name: "name", type: "text", placeholder: "Name" },
@@ -13,27 +27,10 @@ const inputs = [
   { name: "phone", type: "text", placeholder: "Phone" },
 ] as const;
 
-const INITIAL_FORM = { name: "", email: "", phone: "", message: "",};
-const INITIAL_ERRORS = {name: "", email: "", phone: "", message: "",};
 
 export default function ContactBlock() {
-  
-    const [form, setForm] = useState(INITIAL_FORM);
-    const [errors, setErrors] = useState(INITIAL_ERRORS);
+
     const [showSuccess, setShowSuccess] = useState(false);
-
-    const handleChange = (field: keyof typeof form, value: string) => {
-      setForm((prev) => ({
-        ...prev,
-        [field]: value,
-      }));
-
-      setErrors((prev) => ({
-        ...prev,
-        [field]: "",
-      }));
-    };
-
     const inputClass =`w-full border-2 border-border pl-[20px] text-[16px] leading-[24px] 
      md:pl-[40px] md:text-[20px] md:leading-[26px] text-text-dark outline-none placeholder:text-placeholder`;
 
@@ -43,27 +40,14 @@ export default function ContactBlock() {
       color: "bg-primary"
     };
 
-    const validate = () => {
-      const newErrors = { ...INITIAL_ERRORS };
+    const { register, handleSubmit, reset, formState: { errors },} = useForm<ContactFormData>({
+      resolver: zodResolver(contactSchema),
+    });
 
-      Object.entries(form).forEach(([key, value]) => {
-        if (!value.trim()) {
-          newErrors[key as keyof typeof form] =
-            "This field is required";
-        }
-      });
-
-      setErrors(newErrors);
-      return !Object.values(newErrors).some(Boolean);
-    };
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-
-      if (!validate()) return;
-
+    const onSubmit = (data: ContactFormData) => {
+      console.log(data);
       setShowSuccess(true);
-      setForm(INITIAL_FORM);
+      reset();
     };
 
     return (
@@ -157,14 +141,13 @@ export default function ContactBlock() {
                   A QUESTION?
                 </h2>
 
-                <form onSubmit={handleSubmit} className="mt-6.75 flex flex-col gap-3.5">
+                <form onSubmit={handleSubmit(onSubmit)} className="mt-6.75 flex flex-col gap-3.5">
                   {inputs.map((input) => (
                     <div key={input.name}>
                       <input
                         type={input.type}
                         placeholder={input.placeholder}
-                        value={form[input.name]}
-                        onChange={(e) => handleChange(input.name, e.target.value)}
+                        {...register(input.name)}
                         className={cn(inputClass,
                           "h-12.5 md:h-18.75 xl:h-15 2xl:h-18.75", 
                           errors[input.name] && "border-red-500"
@@ -172,7 +155,7 @@ export default function ContactBlock() {
                       />
                       {errors[input.name] && (
                         <p className="ml-10 mt-1 text-[12px] text-red-500">
-                          {errors[input.name]}
+                          {errors[input.name]?.message}
                         </p>
                       )}
                     </div>
@@ -180,18 +163,17 @@ export default function ContactBlock() {
                   <div>
                     <textarea
                         placeholder="Type your question"
-                        value={form.message}
-                        onChange={(e) => handleChange("message", e.target.value)}
+                         {...register("message")}
                         className={cn(inputClass,
                           "h-30 md:h-47.25 xl:h-37.5 2xl:h-47.25 resize-none pt-5 md:pt-10 xl:pt-5 2xl:pt-10",
                           errors.message && "border-red-500"
                         )}
                     />
-                      {errors.message && (
-                        <p className="ml-10 mt-1 text-[12px] text-red-500">
-                          {errors.message}
-                        </p>
-                      )}
+                    {errors.message && (
+                      <p className="ml-10 mt-1 text-[12px] text-red-500">
+                        {errors.message.message}
+                      </p>
+                    )}
                   </div>
                   <Button
                     type="submit"
@@ -207,7 +189,7 @@ export default function ContactBlock() {
           </div>
         </Container>
           
-        <Toast open={showSuccess} onClose={() => setShowSuccess(false)} message="Message sent successfully!" />
+        <Toast open={showSuccess} onClose={() => setShowSuccess(false)} message="Thank you for your question!" />
       </section>
   );
 }
