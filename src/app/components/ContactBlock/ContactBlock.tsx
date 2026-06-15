@@ -70,11 +70,11 @@ export default function ContactBlock() {
           <DecorLines count={6} position="bottom" direction="horizontal" />
         </div>
 
-        <div className="hidden md:flex lg:hidden absolute top-0 vertical-line-right h-full z-30 opacity-20">
+        <div className="hidden md:flex lg:hidden absolute top-0 vertical-line-right h-full z-30 opacity-40">
           <DecorLines count={1} position="right" direction="vertical" />
         </div>
 
-        <div className="hidden md:flex lg:hidden absolute bottom-0 right-10.25 h-225 z-30 opacity-20">
+        <div className="hidden md:flex lg:hidden absolute bottom-0 right-10.25 h-225 z-30 opacity-40">
           <DecorLines count={1} position="right" direction="vertical" />
         </div>
 
@@ -99,6 +99,10 @@ export default function ContactBlock() {
         </div>
 
         <div className="hidden xl:block absolute lg:flex bottom-0 vertical-line-right-2 h-full z-30">
+          <DecorLines count={1} position="right" direction="vertical" />
+        </div>
+
+        <div className="absolute hidden lg:flex top-0 vertical-line-right h-full z-30">
           <DecorLines count={1} position="right" direction="vertical" />
         </div>
 
