@@ -33,6 +33,8 @@
   --color-text: #1A1A1A;
   --color-text-light: #FFFFFF;
   --color-text-dark: #1C2C57;
+  --color-placeholder:#9B9B9B;
+  --color-bg-modal:#2E2E2EB2;
 
   --color-bg: #FFFFFF;
   --color-bg-gray:#E8F4F1;
@@ -45,7 +47,6 @@
   --color-dark-frame-outline:#0E9676 ;
   --color-dark-frame: #178F73;
   --color-gray-idle: #C4C4C4;
-
 
   --text-xs: 12px;
   --text-sm: 14px;
