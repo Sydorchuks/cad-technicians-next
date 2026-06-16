@@ -9,13 +9,12 @@ import Toast from "../ui/Toast/Toast";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import validator from "validator";
 
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
-  email: z.string().refine(validator.isEmail,"Invalid email"),
-  phone: z.string().refine(validator.isMobilePhone, "Invalid phone number"),
+  email: z.string().min(1, "Email is required").email("Invalid email"),
+  phone: z.e164("Phone number must include country code"),
   message: z.string().min(1, "Message is required"),
 });
 
@@ -70,11 +69,11 @@ export default function ContactBlock() {
           <DecorLines count={6} position="bottom" direction="horizontal" />
         </div>
 
-        <div className="hidden md:flex lg:hidden absolute top-0 vertical-line-right h-full z-30 opacity-20">
+        <div className="hidden md:flex lg:hidden absolute top-0 vertical-line-right h-full z-30 opacity-40">
           <DecorLines count={1} position="right" direction="vertical" />
         </div>
 
-        <div className="hidden md:flex lg:hidden absolute bottom-0 right-10.25 h-225 z-30 opacity-20">
+        <div className="hidden md:flex lg:hidden absolute bottom-0 right-10.25 h-225 z-30 opacity-40">
           <DecorLines count={1} position="right" direction="vertical" />
         </div>
 
@@ -99,6 +98,10 @@ export default function ContactBlock() {
         </div>
 
         <div className="hidden xl:block absolute lg:flex bottom-0 vertical-line-right-2 h-full z-30">
+          <DecorLines count={1} position="right" direction="vertical" />
+        </div>
+
+        <div className="absolute hidden lg:flex top-0 vertical-line-right h-full z-30">
           <DecorLines count={1} position="right" direction="vertical" />
         </div>
 

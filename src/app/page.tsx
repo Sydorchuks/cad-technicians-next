@@ -1,19 +1,20 @@
 import ContactBlock from "./components/ContactBlock/ContactBlock";
 import Feedback from "./components/Feedback/Feedback";
-import Header from "./components/Header/Header";
 import HomeAbout from "./components/HomeAbout/HomeAbout";
 import HomeHero from "./components/HomeHero/HomeHero";
 import HomeHowItWorks from "./components/HomeHowItWorks/HomeHowItWorks";
 import Video from "./components/Video/Video";
+import PageLayout from "./pageLayout";
 
 export default function Home(){
-    return(<>
-        <Header variant="dark-bg" />
-        <HomeHero />
-        <HomeAbout />
-        <HomeHowItWorks />
-        <Video />
-        <Feedback />
-        <ContactBlock />
-    </>)
+    return(
+        <PageLayout>
+            <HomeHero />
+            <HomeAbout />
+            <HomeHowItWorks />
+            <Video />
+            <Feedback />
+            <ContactBlock />
+        </PageLayout>
+    )
 }
