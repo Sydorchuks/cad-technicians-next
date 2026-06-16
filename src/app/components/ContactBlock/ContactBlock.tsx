@@ -9,13 +9,12 @@ import Toast from "../ui/Toast/Toast";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import validator from "validator";
 
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
-  email: z.string().refine(validator.isEmail,"Invalid email"),
-  phone: z.string().refine(validator.isMobilePhone, "Invalid phone number"),
+  email: z.string().min(1, "Email is required").email("Invalid email"),
+  phone: z.string().min(1, "Phone is required").regex(/^\+?[0-9\s\-()]{7,20}$/, "Invalid phone number"),
   message: z.string().min(1, "Message is required"),
 });
 
