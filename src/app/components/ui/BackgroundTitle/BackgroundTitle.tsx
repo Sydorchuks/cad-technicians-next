@@ -17,14 +17,14 @@ export default function BackgroundTitle({
           WebkitTextStroke: "2px rgba(255,255,255,0.12)",
           color: "transparent",
           WebkitMaskImage:
-            "linear-gradient(to bottom, black 70%, transparent 100%)",
+            "linear-gradient(to bottom, black 0%, black 15%, transparent 100%)",
           maskImage:
-            "linear-gradient(to bottom, black 70%, transparent 100%)",
+            "linear-gradient(to bottom, black 0%, black 15%, transparent 100%)",
         }
       : {
           WebkitTextStroke: "2px rgba(228,228,228,0.8)",
           color: "transparent",
-        }
+        };
 
   return (
     <div
