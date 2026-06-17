@@ -132,7 +132,7 @@ export default function ServicesGrid() {
                 key={item.title}
                 className="flex w-full max-w-96 flex-col items-center text-center 
                   md:relative md:h-75 md:max-w-none md:items-start md:text-left
-                  xl:absolute xl:left-[var(--xl-left)] 2xl:left-(--desktop-left) xl:h-auto xl:w-72.25"
+                  xl:absolute xl:left-(--xl-left) 2xl:left-(--desktop-left) xl:h-auto xl:w-72.25"
                 style={
                   {
                     "--xl-left": `${position.xlLeft}px`,
