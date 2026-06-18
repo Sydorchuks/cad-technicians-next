@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import Container from "../../components/ui/Container/Container";
 import DecorLines from "../../components/ui/DecorLines/DecorLines";
 import "../../styles/vertical-lines.css";
@@ -47,17 +46,6 @@ const services = [
   },
 ];
 
-const desktopPositions = [
-  { xlLeft: -200, left: 0, iconTop: 81, titleTop: 170, textTop: 272 },
-  { xlLeft: 150, left: 400, iconTop: 81, titleTop: 170, textTop: 272 },
-  { xlLeft: 470, left: 800, iconTop: 81, titleTop: 170, textTop: 272 },
-  { xlLeft: 800, left: 1170, iconTop: 81, titleTop: 170, textTop: 272 },
-  { xlLeft: -200, left: 0, iconTop: 535, titleTop: 624, textTop: 726 },
-  { xlLeft: 150, left: 400, iconTop: 535, titleTop: 624, textTop: 726 },
-  { xlLeft: 470, left: 800, iconTop: 535, titleTop: 624, textTop: 726 },
-  { xlLeft: 800, left: 1170, iconTop: 535, titleTop: 624, textTop: 726 },
-];
-
 const tabletLineClasses = [
   "top-[325px]",
   "top-[645px]",
@@ -68,12 +56,7 @@ const tabletLineClasses = [
   "top-[2250px]",
 ];
 
-type ServiceCardVars = CSSProperties & {
-  "--desktop-left": string;
-  "--icon-top": string;
-  "--title-top": string;
-  "--text-top": string;
-};
+const desktopColumnLines = ["left-2/9", "left-5/11", "left-5/7"];
 
 function ServicesGridDecor() {
   return (
@@ -95,11 +78,11 @@ function ServicesGridDecor() {
         </div>
       ))}
 
-      <div className="absolute left-0 top-125.25 z-0 hidden w-full xl:block">
+      <div className="absolute left-0 top-125.25 z-0 hidden w-full 2xl:block">
         <DecorLines count={1} position="center" direction="horizontal" />
       </div>
 
-      <div className="absolute bottom-7.75 left-0 z-0 hidden w-full xl:block">
+      <div className="absolute bottom-7.75 left-0 z-0 hidden w-full 2xl:block">
         <DecorLines count={1} position="bottom" direction="horizontal" />
       </div>
     </>
@@ -108,52 +91,55 @@ function ServicesGridDecor() {
 
 export default function ServicesGrid() {
   return (
-    <section className="relative h-650 w-full overflow-hidden bg-white md:h-643.5 xl:h-248.5">
+    <section className="relative h-650 w-full overflow-hidden bg-white md:h-643.5 xl:h-425 2xl:h-248.5">
       <ServicesGridDecor />
 
       <Container className="relative h-full">
-      <div className="absolute top-3.25 hidden h-220.75 xl:left-1/2 xl:block ">
-        <DecorLines count={1} direction="vertical" position="left" />
-      </div>
+        <div className="pointer-events-none absolute inset-y-3.25 left-0 z-0 hidden h-full w-full xl:block 2xl:hidden">
+          <div className="absolute left-1/2 top-0 h-full">
+            <DecorLines count={1} direction="vertical" position="left" />
+          </div>
+        </div>
 
-      <div className="absolute bottom-0 hidden h-220.75 xl:left-[86%] 2xl:left-3/4 xl:block">
-        <DecorLines count={1} direction="vertical" position="left" />
-      </div>
+        <div className="pointer-events-none absolute inset-y-3.25 left-0 z-0 hidden w-full 2xl:block">
+          {desktopColumnLines.map((className) => (
+            <div key={className} className={`absolute top-0 h-full ${className}`}>
+              <DecorLines count={1} direction="vertical" position="left" />
+            </div>
+          ))}
+        </div>
 
-      <div className="absolute top-3.25 hidden h-220.75 left-1/7 2xl:left-1/4 xl:block">
-        <DecorLines count={1} direction="vertical" position="left" />
-      </div>
-        <div className="relative z-10 grid grid-cols-1 justify-items-center gap-12 pt-5 md:h-full md:gap-0 md:pt-0 xl:block">
+        <div className="relative z-10 grid grid-cols-1 justify-items-center gap-12 pt-5 md:h-full md:gap-0 md:pt-0 xl:grid-cols-2 xl:grid-rows-4 xl:justify-items-start xl:gap-0 2xl:grid-cols-4 2xl:grid-rows-2">
           {services.map((item, index) => {
-            const position = desktopPositions[index];
+            const isSecondDesktopRow = index >= 4;
 
             return (
               <article
                 key={item.title}
-                className="flex w-full max-w-96 flex-col items-center text-center 
+                className={`
+                  flex w-full max-w-96 flex-col items-center text-center
                   md:relative md:h-75 md:max-w-none md:items-start md:text-left
-                  xl:absolute xl:left-(--xl-left) 2xl:left-(--desktop-left) xl:h-auto xl:w-72.25"
-                style={
-                  {
-                    "--xl-left": `${position.xlLeft}px`,
-                    "--desktop-left": `${position.left}px`,
-                    "--icon-top": `${position.iconTop}px`,
-                    "--title-top": `${position.titleTop}px`,
-                    "--text-top": `${position.textTop}px`,
-                  } as ServiceCardVars
-                }
+                  xl:grid xl:h-full xl:w-full xl:max-w-none xl:grid-rows-[74px_76px_auto] xl:items-start xl:pl-10 xl:py-16 xl:text-left
+                  2xl:grid-rows-[74px_102px_auto] 2xl:pl-4 2xl:py-0
+                  ${isSecondDesktopRow ? "2xl:pt-8.5" : "2xl:pt-20.25"}
+                `}
               >
                 <img
                   src={item.icon}
                   alt=""
-                  className={`size-18.5 object-contain md:absolute md:left-16 md:top-10 xl:left-0 xl:top-(--icon-top) ${item.iconClassName || ""}`}
+                  className={`
+                    size-18.5 object-contain
+                    md:absolute md:left-16 md:top-10
+                    xl:static
+                    ${item.iconClassName || ""}
+                  `}
                 />
 
-                <h3 className="mt-7.5 max-w-90 font-lora text-[30px] font-bold uppercase leading-none text-text-dark md:absolute md:left-16 md:top-33.75 md:mt-0 md:max-w-114 xl:left-0 xl:top-(--title-top) xl:w-71.75 xl:max-w-none">
+                <h3 className="mt-7.5 max-w-90 font-lora text-[30px] font-bold uppercase leading-none text-text-dark md:absolute md:left-16 md:top-33.75 md:mt-0 md:max-w-114 xl:static xl:mt-3.75 xl:w-80 xl:max-w-none xl:text-[28px] 2xl:w-60 2xl:text-[26px]">
                   {item.title}
                 </h3>
 
-                <p className="mt-6.5 max-w-81 font-body text-base leading-6.25 text-text-dark md:absolute md:left-16 md:top-51 md:mt-0 md:w-142.75 md:max-w-none md:text-lg md:leading-6.25 xl:left-0 xl:top-(--text-top) xl:w-71.75">
+                <p className="mt-6.5 max-w-81 font-body text-base leading-6.25 text-text-dark md:absolute md:left-16 md:top-51 md:mt-0 md:w-142.75 md:max-w-none md:text-lg md:leading-6.25 xl:static xl:mt-0 xl:w-80 xl:text-md xl:leading-6.25 2xl:w-60 2xl:text-base">
                   {item.text}
                 </p>
               </article>
