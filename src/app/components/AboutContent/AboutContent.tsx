@@ -57,9 +57,9 @@ function BenefitsList() {
   );
 }
 
-function FullTextContent({ className = "" }: { className?: string }) {
+function TextBody() {
   return (
-    <div className={className}>
+    <>
       <p>{paragraphs[0]}</p>
       <div className="h-8 2xl:h-10 desktop:h-13" />
 
@@ -76,7 +76,7 @@ function FullTextContent({ className = "" }: { className?: string }) {
 
       <div className="h-5 2xl:h-6 desktop:h-6.5" />
       <p>{finalParagraph}</p>
-    </div>
+    </>
   );
 }
 
@@ -92,9 +92,9 @@ function ToggleArrow({
       type="button"
       onClick={onClick}
       aria-label={isExpanded ? "Show less" : "Show more"}
-      className={`mx-auto mt-3 block h-0 w-0 border-x-[7px] border-t-10 border-x-transparent
-         border-t-primary transition-transform duration-300 ${ isExpanded ? "rotate-180" : ""}`
-        }
+      className={`mx-auto mt-3 block h-0 w-0 border-x-[7px] border-t-10 border-x-transparent border-t-primary transition-transform duration-300 ${
+        isExpanded ? "rotate-180" : ""
+      }`}
     />
   );
 }
@@ -104,15 +104,29 @@ function CollapsibleText() {
 
   return (
     <div className="block xl:hidden">
-      <div className="mx-auto max-w-[288px] pt-8 font-body text-base font-normal
-        leading-6.5 text-text-dark md:max-w-103 md:pt-16 md:text-md"
-       >
+      <div className="mx-auto max-w-[288px] pt-8 font-body text-base font-normal leading-6.5 text-text-dark md:max-w-103 md:pt-16 md:text-md">
         <p>{paragraphs[0]}</p>
         <div className="h-10 md:h-13" />
 
-        {isExpanded ? (
-          <>
-            <p>{paragraphs[1]}</p>
+        <div className="relative">
+          <div
+            className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+              isExpanded ? "max-h-450" : "max-h-70 md:max-h-52"
+            }`}
+          >
+            <p>
+              {paragraphs[1]}
+
+              {!isExpanded && (
+                <button
+                  type="button"
+                  onClick={() => setIsExpanded(true)}
+                  aria-label="Show more"
+                  className="relative z-10 ml-2 inline-block h-0 w-0 -translate-y-0.5 border-x-[7px] border-t-10 border-x-transparent border-t-primary"
+                />
+              )}
+            </p>
+
             <div className="h-6.5" />
 
             <p>{paragraphs[2]}</p>
@@ -125,22 +139,19 @@ function CollapsibleText() {
 
             <div className="h-6.5" />
             <p>{finalParagraph}</p>
-
-            <ToggleArrow isExpanded={isExpanded} onClick={() => setIsExpanded(false)} />
-          </>
-        ) : (
-          <div className="relative">
-            <p className="max-h-70 overflow-hidden md:max-h-52">
-              {paragraphs[1]}
-            </p>
-
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-15 md:h-20 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.82)_45%,#fff_100%)]" />
-
-            <div className="absolute left-[50%] md:left-[40%] bottom-1 z-10">
-              <ToggleArrow isExpanded={isExpanded} onClick={() => setIsExpanded(true)} />
-            </div>
           </div>
-        )}
+
+          {!isExpanded && (
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-30 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.72)_35%,#fff_100%)] md:h-20" />
+          )}
+
+          {isExpanded && (
+            <ToggleArrow
+              isExpanded={isExpanded}
+              onClick={() => setIsExpanded(false)}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
@@ -148,12 +159,15 @@ function CollapsibleText() {
 
 export default function AboutContent() {
   return (
-    <section className="relative overflow-hidden bg-white pb-24 md:pb-35 lg:pb-40 xl:h-190 xl:pb-0 2xl:h-220 desktop:h-259">
+    <section className="relative overflow-hidden bg-white pb-15 md:pb-35 lg:pb-40 xl:h-190 xl:pb-0 2xl:h-220 desktop:h-259">
       <AboutContentDecor />
 
       <picture className="relative z-10 block w-full xl:hidden">
         <source media="(max-width: 767px)" srcSet="/about-img-mobile.svg" />
-        <source media="(min-width: 768px) and (max-width: 1279px)" srcSet="/about-img-tablet.svg" />
+        <source
+          media="(min-width: 768px) and (max-width: 1279px)"
+          srcSet="/about-img-tablet.svg"
+        />
 
         <img
           src="/about-img-tablet.svg"
@@ -167,17 +181,14 @@ export default function AboutContent() {
           <img
             src="/about-img.svg"
             alt=""
-            className="hidden object-cover 
-            xl:absolute xl:right-[80%] xl:top-0 xl:block xl:h-175 xl:w-125 xl:max-w-none 
-            2xl:h-205 2xl:w-147.5 desktop:right-[70%] desktop:h-244.5 desktop:w-170.75 ultra:right-[85%] ultra:w-193.25"
+            className="hidden object-cover xl:absolute xl:right-[80%] xl:top-0 xl:block xl:h-175 xl:w-125 xl:max-w-none 2xl:h-205 2xl:w-147.5 desktop:right-[70%] desktop:h-244.5 desktop:w-170.75 ultra:right-[85%] ultra:w-193.25"
           />
 
-          <FullTextContent className="hidden font-body font-normal text-text-dark 
-                xl:absolute xl:left-62.5 xl:top-25 xl:block xl:w-205 xl:text-[14px] xl:leading-6 
-                2xl:left-125 2xl:top-25 2xl:w-230 2xl:text-md 2xl:leading-6.5 
-                desktop:left-125 desktop:top-47.5 desktop:w-235.75 
-                ultra:left-105.75 ultra:top-45" 
-            />
+          <div className="hidden xl:block xl:pt-25 xl:pl-62.5 2xl:pt-25 2xl:pl-125 desktop:pt-47.5 desktop:pl-125 ultra:pt-45 ultra:pl-105.75">
+            <div className="w-205 font-body text-[14px] font-normal leading-6 text-text-dark 2xl:w-230 2xl:text-md 2xl:leading-6.5 desktop:w-235.75">
+              <TextBody />
+            </div>
+          </div>
 
           <CollapsibleText />
         </div>
