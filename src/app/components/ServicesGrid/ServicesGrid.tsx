@@ -109,42 +109,48 @@ export default function ServicesGrid() {
           ))}
         </div>
 
-        <div className="relative z-10 grid grid-cols-1 justify-items-center gap-12 pt-5 md:h-full md:gap-0 md:pt-0 xl:grid-cols-2 xl:grid-rows-4 xl:justify-items-start xl:gap-0 2xl:grid-cols-4 2xl:grid-rows-2">
-          {services.map((item, index) => {
-            const isSecondDesktopRow = index >= 4;
-
-            return (
-              <article
-                key={item.title}
-                className={`
-                  flex w-full max-w-96 flex-col items-center text-center
-                  md:relative md:h-75 md:max-w-none md:items-start md:text-left
-                  xl:grid xl:h-full xl:w-full xl:max-w-none xl:grid-rows-[74px_76px_auto] xl:items-start xl:pl-10 xl:py-16 xl:text-left
-                  2xl:grid-rows-[74px_102px_auto] 2xl:pl-4 2xl:py-0
-                  ${isSecondDesktopRow ? "2xl:pt-8.5" : "2xl:pt-20.25"}
-                `}
-              >
+        <div className="relative z-10 grid grid-cols-1 justify-items-center gap-12 pt-5 md:gap-y-20 md:pt-10 xl:grid-cols-2 xl:justify-items-start xl:gap-x-0 xl:gap-y-24 xl:pt-16 2xl:grid-cols-4 2xl:gap-y-28 2xl:pt-20.25">
+          {services.map((item) => (
+            <article
+              key={item.title}
+              className="
+                flex w-full max-w-96 flex-col items-center text-center
+                md:max-w-142.75 md:items-start md:text-left
+                xl:w-80 xl:max-w-none xl:pl-10
+                2xl:w-60 2xl:pl-4
+              "
+            >
+              <div className="flex h-18.5 items-center justify-center md:justify-start">
                 <img
                   src={item.icon}
                   alt=""
-                  className={`
-                    size-18.5 object-contain
-                    md:absolute md:left-16 md:top-10
-                    xl:static
-                    ${item.iconClassName || ""}
-                  `}
+                  className={`size-18.5 object-contain ${item.iconClassName || ""}`}
                 />
+              </div>
 
-                <h3 className="mt-7.5 max-w-90 font-lora text-[30px] font-bold uppercase leading-none text-text-dark md:absolute md:left-16 md:top-33.75 md:mt-0 md:max-w-114 xl:static xl:mt-3.75 xl:w-80 xl:max-w-none xl:text-[28px] 2xl:w-60 2xl:text-[26px]">
-                  {item.title}
-                </h3>
+              <h3
+                className="
+                  mt-7.5 max-w-90 font-lora text-[30px] font-bold uppercase leading-none text-text-dark
+                  md:max-w-114
+                  xl:mt-3.75 xl:min-h-19 xl:w-80 xl:max-w-none xl:text-[28px]
+                  2xl:min-h-25.5 2xl:w-60 2xl:text-[26px]
+                "
+              >
+                {item.title}
+              </h3>
 
-                <p className="mt-6.5 max-w-81 font-body text-base leading-6.25 text-text-dark md:absolute md:left-16 md:top-51 md:mt-0 md:w-142.75 md:max-w-none md:text-lg md:leading-6.25 xl:static xl:mt-0 xl:w-80 xl:text-md xl:leading-6.25 2xl:w-60 2xl:text-base">
-                  {item.text}
-                </p>
-              </article>
-            );
-          })}
+              <p
+                className="
+                  mt-6.5 max-w-81 font-body text-base leading-6.25 text-text-dark
+                  md:w-142.75 md:max-w-none md:text-lg
+                  xl:mt-0 xl:w-80 xl:text-md
+                  2xl:w-60 2xl:text-base
+                "
+              >
+                {item.text}
+              </p>
+            </article>
+          ))}
         </div>
       </Container>
     </section>
