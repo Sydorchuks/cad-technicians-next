@@ -4,6 +4,7 @@ import { useState } from "react";
 import Container from "../../components/ui/Container/Container";
 import DecorLines from "../../components/ui/DecorLines/DecorLines";
 import "../../styles/vertical-lines.css";
+import { cn } from "../../../../cn";
 
 const paragraphs = [
   "When it comes to accurate AutoCAD drawings, you can’t afford to make a mistake or spend massive amounts of time on it. How do you find the balance? At Survey Drafters we take out the guesswork by using your field data to create high-quality PDF and DWG files. We save you time and money, allowing you to maximize your business and increase client satisfaction.",
@@ -44,9 +45,9 @@ function AboutContentDecor() {
   );
 }
 
-function BenefitsList() {
+function BenefitsList({ className = "" }: { className?: string }) {
   return (
-    <ul className="space-y-1.5">
+    <ul className={cn("space-y-1.5", className)}>
       {benefits.map((benefit) => (
         <li key={benefit} className="flex items-start gap-3 desktop:gap-3.5">
           <span className="shrink-0 leading-6.5 text-primary">•</span>
@@ -60,22 +61,24 @@ function BenefitsList() {
 function TextBody() {
   return (
     <>
-      <p>{paragraphs[0]}</p>
-      <div className="h-8 2xl:h-10 desktop:h-13" />
+      {paragraphs.map((paragraph, index) => (
+        <p
+          key={paragraph}
+          className={
+            index === 0
+              ? ""
+              : index === 1
+                ? "mt-8 2xl:mt-10 desktop:mt-13"
+                : "mt-5 2xl:mt-6 desktop:mt-6.5"
+          }
+        >
+          {paragraph}
+        </p>
+      ))}
 
-      <p>{paragraphs[1]}</p>
-      <div className="h-5 2xl:h-6 desktop:h-6.5" />
+      <BenefitsList className="mt-5 2xl:mt-6 desktop:mt-6.5" />
 
-      <p>{paragraphs[2]}</p>
-      <div className="h-5 2xl:h-6 desktop:h-6.5" />
-
-      <p>{paragraphs[3]}</p>
-      <div className="h-5 2xl:h-6 desktop:h-6.5" />
-
-      <BenefitsList />
-
-      <div className="h-5 2xl:h-6 desktop:h-6.5" />
-      <p>{finalParagraph}</p>
+      <p className="mt-5 2xl:mt-6 desktop:mt-6.5">{finalParagraph}</p>
     </>
   );
 }
@@ -92,7 +95,7 @@ function ToggleArrow({
       type="button"
       onClick={onClick}
       aria-label={isExpanded ? "Show less" : "Show more"}
-      className={`mx-auto mt-3 block h-0 w-0 border-x-[7px] border-t-10 border-x-transparent border-t-primary transition-transform duration-300 ${
+      className={`mx-auto mt-3 block h-0 w-0 border-x-[7px] border-t-[10px] border-x-transparent border-t-primary transition-transform duration-300 ${
         isExpanded ? "rotate-180" : ""
       }`}
     />
@@ -106,39 +109,34 @@ function CollapsibleText() {
     <div className="block xl:hidden">
       <div className="mx-auto max-w-[288px] pt-8 font-body text-base font-normal leading-6.5 text-text-dark md:max-w-103 md:pt-16 md:text-md">
         <p>{paragraphs[0]}</p>
-        <div className="h-10 md:h-13" />
 
-        <div className="relative">
+        <div className="relative mt-10 md:mt-13">
           <div
             className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
               isExpanded ? "max-h-450" : "max-h-70 md:max-h-52"
             }`}
           >
-            <p>
-              {paragraphs[1]}
+            <div className="space-y-6.5">
+              <p>
+                {paragraphs[1]}
 
-              {!isExpanded && (
-                <button
-                  type="button"
-                  onClick={() => setIsExpanded(true)}
-                  aria-label="Show more"
-                  className="relative z-10 ml-2 inline-block h-0 w-0 -translate-y-0.5 border-x-[7px] border-t-10 border-x-transparent border-t-primary"
-                />
-              )}
-            </p>
+                {!isExpanded && (
+                  <button
+                    type="button"
+                    onClick={() => setIsExpanded(true)}
+                    aria-label="Show more"
+                    className="relative z-10 ml-2 inline-block h-0 w-0 -translate-y-0.5 border-x-[7px] border-t-[10px] border-x-transparent border-t-primary"
+                  />
+                )}
+              </p>
 
-            <div className="h-6.5" />
+              <p>{paragraphs[2]}</p>
+              <p>{paragraphs[3]}</p>
 
-            <p>{paragraphs[2]}</p>
-            <div className="h-6.5" />
+              <BenefitsList />
 
-            <p>{paragraphs[3]}</p>
-            <div className="h-6.5" />
-
-            <BenefitsList />
-
-            <div className="h-6.5" />
-            <p>{finalParagraph}</p>
+              <p>{finalParagraph}</p>
+            </div>
           </div>
 
           {!isExpanded && (
@@ -159,7 +157,7 @@ function CollapsibleText() {
 
 export default function AboutContent() {
   return (
-    <section className="relative overflow-hidden bg-white pb-15 md:pb-35 lg:pb-40 xl:h-190 xl:pb-0 2xl:h-220 desktop:h-259">
+    <section className="relative overflow-hidden bg-white pb-24 md:pb-35 lg:pb-40 xl:h-190 xl:pb-0 2xl:h-220 desktop:h-259">
       <AboutContentDecor />
 
       <picture className="relative z-10 block w-full xl:hidden">
