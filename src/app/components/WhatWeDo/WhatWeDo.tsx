@@ -24,14 +24,16 @@ export default function WhatWeDo() {
           </span>
         </BackgroundTitle>
 
-        <h2 className="relative z-10 mt-0 font-lora text-4xl font-normal uppercase leading-none text-text-dark md:text-7xl xl:text-9xl">
-          WHAT WE DO?
-        </h2>
+        <div className="relative z-10">
+          <h2 className="font-lora text-4xl font-normal uppercase leading-none text-text-dark md:text-7xl xl:text-9xl">
+            WHAT WE DO?
+          </h2>
 
-        <p className="relative z-10 mx-auto mt-18 w-full font-body text-base font-normal leading-6.5 text-text-dark md:mt-7 md:text-md xl:mt-7.5 xl:w-175">
-          Our business is a blend of technical knowledge and experienced customer service. From start to finish, you&apos;ll find that working
-          with Survey Drafters is a pleasure. We offer a partnership that allows your business to skyrocket to the next level.
-        </p>
+          <p className="mx-auto mt-18 w-full font-body text-base font-normal leading-6.5 text-text-dark md:mt-7 md:text-md xl:mt-7.5 xl:w-175">
+            Our business is a blend of technical knowledge and experienced customer service. From start to finish, you&apos;ll find that working
+            with Survey Drafters is a pleasure. We offer a partnership that allows your business to skyrocket to the next level.
+          </p>
+        </div>
       </div>
 
       <img
