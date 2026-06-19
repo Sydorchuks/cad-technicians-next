@@ -1,10 +1,10 @@
-import { cn } from "../../../../../cn"
+import { cn } from "../../../../../cn";
 
 type BackgroundTitleProps = {
-  children: React.ReactNode
-  className?: string
-  variant?: "light" | "dark"
-}
+  children: React.ReactNode;
+  className?: string;
+  variant?: "light" | "dark" | "dark-no-fade";
+};
 
 export default function BackgroundTitle({
   children,
@@ -21,10 +21,15 @@ export default function BackgroundTitle({
           maskImage:
             "linear-gradient(to bottom, black 0%, black 15%, transparent 100%)",
         }
-      : {
-          WebkitTextStroke: "2px rgba(228,228,228,0.8)",
-          color: "transparent",
-        };
+      : variant === "dark-no-fade"
+        ? {
+            WebkitTextStroke: "2px rgba(255,255,255,0.12)",
+            color: "transparent",
+          }
+        : {
+            WebkitTextStroke: "2px rgba(228,228,228,0.8)",
+            color: "transparent",
+          };
 
   return (
     <div
@@ -36,5 +41,5 @@ export default function BackgroundTitle({
     >
       {children}
     </div>
-  )
+  );
 }
