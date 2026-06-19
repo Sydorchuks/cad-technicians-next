@@ -95,7 +95,7 @@ function ToggleArrow({
       type="button"
       onClick={onClick}
       aria-label={isExpanded ? "Show less" : "Show more"}
-      className={`mx-auto mt-3 block h-0 w-0 border-x-[7px] border-t-[10px] border-x-transparent border-t-primary transition-transform duration-300 ${
+      className={`mx-auto mt-3 block h-0 w-0 border-x-[7px] border-t-10 border-x-transparent border-t-primary transition-transform duration-300 ${
         isExpanded ? "rotate-180" : ""
       }`}
     />
@@ -125,7 +125,7 @@ function CollapsibleText() {
                     type="button"
                     onClick={() => setIsExpanded(true)}
                     aria-label="Show more"
-                    className="relative z-10 ml-2 inline-block h-0 w-0 -translate-y-0.5 border-x-[7px] border-t-[10px] border-x-transparent border-t-primary"
+                    className="relative z-10 ml-2 inline-block h-0 w-0 -translate-y-0.5 border-x-[7px] border-t-10 border-x-transparent border-t-primary"
                   />
                 )}
               </p>
