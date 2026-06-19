@@ -64,6 +64,8 @@ export default function Header({
       : "bg-white shadow-sm";
   })();
 
+  const burgerSrc = isDark ? "/header-burger-button.png" : "/header-burger-button-light.png";
+
   return (
     <header className={cn("fixed left-0 top-0 z-50 w-full border-b border-border/20 md:min-h-27", headerBackground)}>
       <Container>
@@ -148,7 +150,7 @@ export default function Header({
                   />
                 ) : (
                   <Image
-                    src="/header-burger-button.png"
+                    src={burgerSrc}
                     alt="Menu"
                     width={37}
                     height={26}
