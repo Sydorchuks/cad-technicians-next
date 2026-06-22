@@ -1,7 +1,7 @@
-import Container from "../../components/ui/Container/Container";
-import DecorLines from "../ui/DecorLines/DecorLines";
-import "../../styles/vertical-lines.css";
 import Link from "next/link";
+import Container from "@/app/components/ui/Container/Container";
+import DecorLines from "@/app/components/ui/DecorLines/DecorLines";
+import "@/app/styles/vertical-lines.css";
 
 
 const footerLinks = [

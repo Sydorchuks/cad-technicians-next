@@ -1,4 +1,4 @@
-import { cn } from "../../../../../cn";
+import { cn } from "@/cn";
 
 type ButtonProps = React.ComponentProps<"button"> & {
   variant?: "primary" | "secondary" | "outline-green";

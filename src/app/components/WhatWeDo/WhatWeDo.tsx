@@ -1,5 +1,5 @@
-import BackgroundTitle from "../ui/BackgroundTitle/BackgroundTitle";
-import "../../styles/vertical-lines.css";
+import BackgroundTitle from "@/app/components/ui/BackgroundTitle/BackgroundTitle";
+import "@/app/styles/vertical-lines.css";
 
 export default function WhatWeDo() {
   return (
