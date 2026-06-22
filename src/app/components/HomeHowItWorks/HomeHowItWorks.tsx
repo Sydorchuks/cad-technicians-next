@@ -1,8 +1,8 @@
-import Container from "../../components/ui/Container/Container";
-import BackgroundTitle from "../ui/BackgroundTitle/BackgroundTitle";
-import DecorLines from "../ui/DecorLines/DecorLines";
-import "../../styles/vertical-lines.css";
-import "../../globals.css"
+import BackgroundTitle from "@/app/components/ui/BackgroundTitle/BackgroundTitle";
+import Container from "@/app/components/ui/Container/Container";
+import DecorLines from "@/app/components/ui/DecorLines/DecorLines";
+import "@/app/globals.css";
+import "@/app/styles/vertical-lines.css";
 
 const steps = [
   {

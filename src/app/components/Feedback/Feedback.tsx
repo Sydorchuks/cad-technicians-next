@@ -2,18 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
-
-import Container from "../../components/ui/Container/Container";
-import DecorLines from "../../components/ui/DecorLines/DecorLines";
-
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import Container from "@/app/components/ui/Container/Container";
+import DecorLines from "@/app/components/ui/DecorLines/DecorLines";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
-import "../../styles/vertical-lines.css";
-import "../../globals.css";
+import "@/app/globals.css";
+import "@/app/styles/vertical-lines.css";
 
 const feedbacks = [
   {

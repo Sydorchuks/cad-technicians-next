@@ -1,5 +1,5 @@
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+import Footer from "@/app/components/Footer/Footer";
+import Header from "@/app/components/Header/Header";
 
 type PageLayoutProps = {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ export default function PageLayout({
   return (
     <>
       <Header variant={headerVariant} />
-      <main className="flex-1">{children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   );

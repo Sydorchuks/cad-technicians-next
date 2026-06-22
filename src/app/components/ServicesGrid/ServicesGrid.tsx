@@ -1,6 +1,6 @@
-import Container from "../../components/ui/Container/Container";
-import DecorLines from "../../components/ui/DecorLines/DecorLines";
-import "../../styles/vertical-lines.css";
+import Container from "@/app/components/ui/Container/Container";
+import DecorLines from "@/app/components/ui/DecorLines/DecorLines";
+import "@/app/styles/vertical-lines.css";
 
 const services = [
   {

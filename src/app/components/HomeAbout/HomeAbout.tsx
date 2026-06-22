@@ -1,9 +1,10 @@
-import Container from "../../components/ui/Container/Container";
-import BackgroundTitle from "../ui/BackgroundTitle/BackgroundTitle";
-import DecorLines from "../ui/DecorLines/DecorLines";
-import "../../styles/vertical-lines.css"
-import "../../globals.css"
-import Button from "../ui/Button/Button";
+import BackgroundTitle from "@/app/components/ui/BackgroundTitle/BackgroundTitle";
+import Button from "@/app/components/ui/Button/Button";
+import Container from "@/app/components/ui/Container/Container";
+import DecorLines from "@/app/components/ui/DecorLines/DecorLines";
+import "@/app/globals.css";
+import "@/app/styles/vertical-lines.css";
+
 
 export default function HomeAbout() {
   return (
