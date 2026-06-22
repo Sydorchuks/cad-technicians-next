@@ -1,8 +1,8 @@
+import { cn } from "../../../../cn";
 import BackgroundTitle from "../ui/BackgroundTitle/BackgroundTitle";
 import Button from "../ui/Button/Button";
 import DecorLines from "../ui/DecorLines/DecorLines";
 import "../../styles/vertical-lines.css";
-import { cn } from "../../../../cn";
 
 const items = [
   {
@@ -47,11 +47,11 @@ function WhyUsDecor() {
         <DecorLines count={1} position="bottom" direction="horizontal" />
       </div>
 
-      <div className="absolute bottom-32.5 left-0 z-0 w-full opacity-15 md:bottom-33.5 xl:bottom-37 2xl:bottom-39.75 ultra:bottom-42">
+      <div className="absolute bottom-32.5 left-0 z-0 w-full opacity-15 md:bottom-35.5 xl:bottom-37 2xl:bottom-39.75 ultra:bottom-42">
         <DecorLines count={1} position="bottom" direction="horizontal" />
       </div>
 
-      <div className="absolute bottom-30.75 left-0 z-0 w-full opacity-15 md:bottom-30.25 xl:bottom-33.75 2xl:bottom-36.5 ultra:bottom-38.5">
+      <div className="absolute bottom-30.75 left-0 z-0 w-full opacity-15 md:bottom-32.25 xl:bottom-33.75 2xl:bottom-36.5 ultra:bottom-38.5">
         <DecorLines count={1} position="bottom" direction="horizontal" />
       </div>
 
@@ -72,23 +72,15 @@ function WhyUsDecor() {
 
 export default function WhyUs() {
   return (
-    <section
-      className="relative overflow-hidden bg-primary px-5 pt-24 pb-37
-        md:px-0 md:pt-25 md:pb-36.25
-        lg:pt-28 lg:pb-37.5
-        xl:h-230 xl:px-0 xl:pt-0 xl:pb-0
-        2xl:h-256
-        ultra:h-271"
+    <section className="
+        relative overflow-hidden bg-primary pt-24 pb-15 md:pt-25 md:pb-15.25 lg:pt-28 lg:pb-18.75
+        xl:pt-43.75 xl:pb-17.5 2xl:pt-47.5 2xl:pb-15 ultra:pt-44.5 ultra:pb-15"
     >
       <WhyUsDecor />
 
       <BackgroundTitle
         variant="dark"
-        className="
-          left-1/2 top-5 -translate-x-1/2 text-bg-sm leading-none
-          md:left-1/3 md:top-7.5 md:text-[160px]
-          xl:hidden
-        "
+        className="left-1/2 top-5 -translate-x-1/2 text-bg-sm leading-none md:left-1/3 md:top-7.5 md:text-[160px] xl:hidden"
       >
         <span className="md:hidden">WHY US?</span>
         <span className="hidden md:inline">WHY</span>
@@ -96,12 +88,8 @@ export default function WhyUs() {
 
       <BackgroundTitle
         variant="dark-no-fade"
-        className="
-          hidden xl:block
-          xl:left-95 xl:top-5 xl:translate-x-0 xl:text-[330px] xl:leading-97.5
-          2xl:left-122.25 2xl:text-bg-lg 2xl:leading-115
-          ultra:left-178.25 ultra:top-0 ultra:leading-128
-        "
+        className="hidden xl:block xl:left-95 xl:top-5 xl:text-[330px] xl:leading-97.5
+          2xl:left-122.25 2xl:text-bg-lg 2xl:leading-115 ultra:left-178.25 ultra:top-0 ultra:leading-128"
       >
         WHY
       </BackgroundTitle>
@@ -109,84 +97,73 @@ export default function WhyUs() {
       <BackgroundTitle
         variant="dark-no-fade"
         className="
-          hidden xl:block
-          xl:left-95 xl:top-117.5 xl:translate-x-0 xl:text-[330px] xl:leading-97.5
-          2xl:left-122.25 2xl:top-130 2xl:text-bg-lg 2xl:leading-115
-          ultra:left-178.25 ultra:top-128 ultra:leading-128
-        "
+          hidden xl:block xl:left-95 xl:top-117.5 xl:text-[330px] xl:leading-97.5
+          2xl:left-122.25 2xl:top-130 2xl:text-bg-lg 2xl:leading-115 ultra:left-178.25 ultra:top-128 ultra:leading-128"
       >
         US?
       </BackgroundTitle>
 
-      <h2
-        className="relative -top-4 z-10 mx-auto w-fit font-lora text-4xl font-normal uppercase leading-none text-white
-          md:top-0 md:text-7xl
-          xl:absolute xl:left-37.5 xl:top-43.75 xl:mx-0 xl:text-[96px] xl:leading-30
-          2xl:left-75 2xl:top-47.5 2xl:text-9xl 2xl:leading-34.5
-          ultra:left-140 ultra:top-44.5 ultra:leading-38.5"
-      >
-        WHY US?
-      </h2>
+      <div className="relative z-10 px-5 md:px-0 xl:pl-37.5 2xl:pl-75 ultra:pl-140">
+        <h2
+          className="
+            mx-auto xl:mx-0 w-fit font-lora text-4xl font-normal uppercase leading-none text-white
+            -mt-4 md:mt-0 md:text-7xl xl:text-[96px] xl:leading-30
+            2xl:-ml-25 2xl:text-9xl 2xl:leading-34.5 ultra:ml-0 ultra:leading-38.5"
+        >
+          WHY US?
+        </h2>
 
-      <div
-        className="relative z-10 mx-auto mt-3.25 flex w-full max-w-68 flex-col items-center gap-13.75 text-center
-          md:mt-15 md:max-w-98.5 md:gap-19.25
-          lg:max-w-107.5 lg:gap-20.5
-          xl:absolute xl:left-37.5 xl:top-100 xl:mt-0 xl:max-w-none xl:flex-row xl:items-start xl:gap-20 xl:text-left
-          2xl:left-50 2xl:top-117.5 2xl:gap-23
-          desktop:left-75
-          ultra:left-140 ultra:top-120 ultra:gap-26"
-      >
-        {items.map((item) => (
-          <article
-            key={item.title}
-            className="w-full xl:w-[320px] 2xl:w-98.5 ultra:w-93.75"
-          >
-            <div className="flex h-20 items-center justify-center md:h-18.75 xl:h-24 xl:justify-start 2xl:h-26.25 ultra:h-28.75">
-              <img
-                src={item.icon}
-                alt=""
-                className={cn("object-contain", item.iconClassName)}
-              />
-            </div>
-
-            <h3
-              className="mt-7 font-lora text-4xl font-normal uppercase leading-none text-white
-                md:mt-5.75
-                xl:mt-5 xl:text-[42px] xl:leading-13
-                2xl:mt-6 2xl:text-[46px] 2xl:leading-14.5
-                ultra:text-6xl ultra:leading-16"
+        <div
+          className="
+            mx-auto mt-7.25 flex w-full max-w-68 flex-col items-center gap-13.75 text-center
+            md:mt-15 md:max-w-98.5 md:gap-19.25 lg:max-w-107.5 lg:gap-20.5
+            xl:mx-0 xl:mt-26.25 xl:max-w-none xl:flex-row xl:items-start xl:gap-20 xl:text-left
+            2xl:-ml-25 2xl:mt-35.5 2xl:gap-23 ultra:ml-0 ultra:mt-37 ultra:gap-26"
+        >
+          {items.map((item) => (
+            <article
+              key={item.title}
+              className="w-full xl:w-80 2xl:w-98.5 ultra:w-93.75"
             >
-              {item.title}
-            </h3>
+              <div className="flex h-20 items-center justify-center md:h-18.75 xl:h-24 xl:justify-start 2xl:h-26.25 ultra:h-28.75">
+                <img
+                  src={item.icon}
+                  alt=""
+                  className={cn("object-contain", item.iconClassName)}
+                />
+              </div>
 
-            <p
-              className="mt-4 font-body text-base font-normal leading-6.25 text-white
-                md:mt-6.5
-                xl:mt-6 xl:text-base
-                2xl:mt-6.5 2xl:text-md
-                ultra:mt-7.75 ultra:text-lg"
-            >
-              {item.text}
-            </p>
-          </article>
-        ))}
+              <h3
+                className="
+                  mt-7 font-lora text-4xl font-normal uppercase leading-none text-white
+                  md:mt-5.75 xl:mt-5 xl:text-[42px] xl:leading-13
+                  2xl:mt-6 2xl:text-[46px] 2xl:leading-14.5 ultra:text-6xl ultra:leading-16"
+              >
+                {item.title}
+              </h3>
+
+              <p
+                className="
+                  mt-4 font-body text-base font-normal leading-6.25 text-white
+                  md:mt-6.5 xl:mt-6 2xl:mt-6.5 2xl:text-md ultra:mt-7.75 ultra:text-lg"
+              >
+                {item.text}
+              </p>
+            </article>
+          ))}
+        </div>
       </div>
 
-      <Button
-        variant="secondary"
-        className="
-          absolute bottom-15.5 left-1/2 z-10 flex w-39.5 -translate-x-1/2
-          items-center justify-center text-[12px] leading-5.75
-          md:bottom-10 md:h-13.25 md:w-45.5 md:text-base
-          lg:bottom-13
-          xl:h-14.5 xl:w-57.5
-          2xl:bottom-14 2xl:h-15.75 2xl:w-65.5 2xl:text-md
-          ultra:bottom-17
-        "
-      >
-        GET STARTED
-      </Button>
+      <div className="relative z-10 mt-15.5 flex justify-center md:mt-10 lg:mt-13 xl:mt-16 2xl:mt-35 ultra:mt-20">
+        <Button
+          variant="secondary"
+          className="
+            flex w-39.5 items-center justify-center text-[12px] leading-5.75
+            md:h-13.25 md:w-45.5 md:text-base xl:h-14.5 xl:w-57.5 2xl:h-15.75 2xl:w-65.5 2xl:text-md"
+        >
+          GET STARTED
+        </Button>
+      </div>
     </section>
   );
 }
