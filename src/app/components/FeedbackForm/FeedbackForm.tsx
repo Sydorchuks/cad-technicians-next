@@ -4,9 +4,9 @@ import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { cn } from "../../../../cn";
-import Button from "../ui/Button/Button";
-import Toast from "../ui/Toast/Toast";
+import { cn } from "@/cn";
+import Button from "@/app/components/ui/Button/Button";
+import Toast from "@/app/components/ui/Toast/Toast";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),

@@ -1,10 +1,11 @@
 "use client";
+
 import { useState } from "react";
-import Container from "../../components/ui/Container/Container";
-import DecorLines from "../ui/DecorLines/DecorLines";
-import "../../styles/vertical-lines.css";
-import "../../globals.css"
-import PlayButton from "../ui/PlayButton/PlayButton";
+import Container from "@/app/components/ui/Container/Container";
+import DecorLines from "@/app/components/ui/DecorLines/DecorLines";
+import PlayButton from "@/app/components/ui/PlayButton/PlayButton";
+import "@/app/globals.css";
+import "@/app/styles/vertical-lines.css";
 
 export default function Video() {
   const [isPlaying, setIsPlaying] = useState(false);

@@ -1,4 +1,4 @@
-import Container from "../ui/Container/Container";
+import Container from "@/app/components/ui/Container/Container";
 
 export default function ContactHero() {
   return (

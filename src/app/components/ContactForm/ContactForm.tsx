@@ -1,5 +1,5 @@
-import FeedbackForm from "../FeedbackForm/FeedbackForm";
-import DecorLines from "../ui/DecorLines/DecorLines";
+import FeedbackForm from "@/app/components/FeedbackForm/FeedbackForm";
+import DecorLines from "@/app/components/ui/DecorLines/DecorLines";
 
 export default function ContactForm() {
   return (

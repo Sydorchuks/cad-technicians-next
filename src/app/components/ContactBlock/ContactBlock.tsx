@@ -1,11 +1,11 @@
 "use client";
 
-import { cn } from "../../../../cn";
-import Container from "../../components/ui/Container/Container";
-import DecorLines from "../../components/ui/DecorLines/DecorLines";
-import Button from "../ui/Button/Button";
-import "../../styles/vertical-lines.css";
-import FeedbackForm from "../FeedbackForm/FeedbackForm";
+import { cn } from "@/cn";
+import Container from "@/app/components/ui/Container/Container";
+import DecorLines from "@/app/components/ui/DecorLines/DecorLines";
+import Button from "@/app/components/ui/Button/Button";
+import FeedbackForm from "@/app/components/FeedbackForm/FeedbackForm";
+import "@/app/styles/vertical-lines.css";
 
 export default function ContactBlock() {
   const greenBlock = {

@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import Container from "../ui/Container/Container"
-import Button from "../ui/Button/Button"
-import { cn } from "../../../../cn"
-import useScrolled from "@/app/hooks/useScrolled"
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { cn } from "@/cn";
+import useScrolled from "@/app/hooks/useScrolled";
+import Button from "@/app/components/ui/Button/Button";
+import Container from "@/app/components/ui/Container/Container";
 
 type HeaderProps = {
   variant?: "light-bg" | "dark-bg"

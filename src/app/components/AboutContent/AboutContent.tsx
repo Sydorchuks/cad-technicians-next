@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Container from "../../components/ui/Container/Container";
-import DecorLines from "../../components/ui/DecorLines/DecorLines";
-import "../../styles/vertical-lines.css";
-import { cn } from "../../../../cn";
+import { cn } from "@/cn";
+import Container from "@/app/components/ui/Container/Container";
+import DecorLines from "@/app/components/ui/DecorLines/DecorLines";
+import "@/app/styles/vertical-lines.css";
 
 const paragraphs = [
   "When it comes to accurate AutoCAD drawings, you can’t afford to make a mistake or spend massive amounts of time on it. How do you find the balance? At Survey Drafters we take out the guesswork by using your field data to create high-quality PDF and DWG files. We save you time and money, allowing you to maximize your business and increase client satisfaction.",
